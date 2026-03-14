@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Someone Special ❤️</title>
+
+<style>
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg,#ff9a9e,#fad0c4);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.card{
+    background:white;
+    padding:40px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+    max-width:500px;
+}
+
+h1{
+    color:#ff4b5c;
+}
+
+button{
+    background:#ff4b5c;
+    color:white;
+    border:none;
+    padding:12px 20px;
+    border-radius:10px;
+    font-size:16px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#ff1e3c;
+}
+
+#message{
+    margin-top:20px;
+    font-size:18px;
+    color:#333;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+<h1>Hey You ❤️</h1>
+
+<p>
+I made this little page just to make you smile 😊<br>
+Sometimes small things carry the biggest feelings.
+</p>
+
+<button onclick="showMessage()">Click Me</button>
+
+<p id="message"></p>
+
+</div>
+
+<script>
+function showMessage(){
+document.getElementById("message").innerHTML =
+"You are special to me and you always will be ❤️";
+}
+</script>
+
+</body>
+</html>
