@@ -63,15 +63,11 @@ margin-bottom:20px;
 color:#60a5fa;
 }
 
-/* typing text */
-
 #typing{
 font-size:20px;
 min-height:80px;
 line-height:1.5;
 }
-
-/* button */
 
 button{
 margin-top:25px;
@@ -89,16 +85,12 @@ button:hover{
 transform:scale(1.1);
 }
 
-/* hidden message */
-
 #secret{
 display:none;
 margin-top:20px;
 font-size:19px;
 color:#e2e8f0;
 }
-
-/* gallery */
 
 .gallery{
 margin-top:25px;
@@ -141,8 +133,8 @@ color:#94a3b8;
 <p id="secret">
 Bas itna kehna tha...  
 Aapse baat karke ek alag hi sukoon milta hai 🙂  
-Butki barosa kro pathak pe or ha
-Ajj ke lie kan pakad ke sorry
+Butki barosa kro pathak pe aur ha  
+Aaj ke liye kan pakad ke sorry 🙏
 </p>
 
 <div class="gallery">
@@ -159,9 +151,15 @@ Made by Pathak Ji ✨
 
 <script>
 
-/* typing text */
+const text = `Mishra ji 🥺
+Pata nahi kyun, par aap se baat karte hi din thoda aur accha lagne lagta hai.
+Aapki awaaz, aapki baatein aur aapka simple sa style… sab kuch dil ko sukoon deta hai.
 
-const text = "Mishra ji, pata nahi kyun… par aapse baat karke dil ko alag sa sukoon milta hai Aap meri life me ek special jagah bana chuki ho";
+Kabhi kabhi lagta hai ki aap bas yunhi muskurati raho aur main bas us muskurahat ka reason banta rahun.
+Sach bolu to, aap thodi si special ho… aur shayad mere liye thodi zyada hi. ✨
+
+Bas itna sa kehna tha…
+apna khayal rakhiye Mishra ji, kyunki aapki muskurahat kisi ke din ko bahut khoobsurat bana deti hai. 🌸`;
 
 let i=0;
 
@@ -175,13 +173,9 @@ setTimeout(typing,40);
 
 typing();
 
-/* show secret message */
-
 function showSecret(){
 document.getElementById("secret").style.display="block";
 }
-
-/* particles */
 
 function createParticle(){
 const particle = document.createElement("div");
