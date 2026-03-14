@@ -2,76 +2,201 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For Someone Special ❤️</title>
+<title>Mishra Ji :)</title>
 
 <style>
-body{
-    margin:0;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg,#ff9a9e,#fad0c4);
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    height:100vh;
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family: "Poppins", sans-serif;
 }
 
+body{
+height:100vh;
+background:#0f172a;
+display:flex;
+justify-content:center;
+align-items:center;
+color:white;
+overflow:hidden;
+}
+
+/* floating particles */
+
+.particle{
+position:absolute;
+width:6px;
+height:6px;
+background:#38bdf8;
+border-radius:50%;
+opacity:0.7;
+animation:float 8s linear infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(0)}
+100%{transform:translateY(-100vh)}
+}
+
+/* main card */
+
 .card{
-    background:white;
-    padding:40px;
-    border-radius:20px;
-    text-align:center;
-    box-shadow:0 10px 25px rgba(0,0,0,0.2);
-    max-width:500px;
+background:#111827;
+padding:40px;
+border-radius:20px;
+width:650px;
+text-align:center;
+box-shadow:0 20px 40px rgba(0,0,0,0.5);
+animation:fade 1.5s ease;
+}
+
+@keyframes fade{
+from{opacity:0; transform:translateY(30px)}
+to{opacity:1; transform:translateY(0)}
 }
 
 h1{
-    color:#ff4b5c;
+font-size:34px;
+margin-bottom:20px;
+color:#60a5fa;
 }
 
+/* typing text */
+
+#typing{
+font-size:20px;
+min-height:80px;
+line-height:1.5;
+}
+
+/* button */
+
 button{
-    background:#ff4b5c;
-    color:white;
-    border:none;
-    padding:12px 20px;
-    border-radius:10px;
-    font-size:16px;
-    cursor:pointer;
+margin-top:25px;
+padding:12px 28px;
+font-size:18px;
+border:none;
+border-radius:10px;
+background:#38bdf8;
+color:#0f172a;
+cursor:pointer;
+transition:0.3s;
 }
 
 button:hover{
-    background:#ff1e3c;
+transform:scale(1.1);
 }
 
-#message{
-    margin-top:20px;
-    font-size:18px;
-    color:#333;
+/* hidden message */
+
+#secret{
+display:none;
+margin-top:20px;
+font-size:19px;
+color:#e2e8f0;
 }
+
+/* gallery */
+
+.gallery{
+margin-top:25px;
+display:flex;
+justify-content:center;
+gap:15px;
+}
+
+.gallery img{
+width:120px;
+height:120px;
+border-radius:12px;
+object-fit:cover;
+transition:0.3s;
+}
+
+.gallery img:hover{
+transform:scale(1.15) rotate(2deg);
+}
+
+.footer{
+margin-top:25px;
+font-size:15px;
+color:#94a3b8;
+}
+
 </style>
 </head>
 
 <body>
 
 <div class="card">
-<h1>Hey You ❤️</h1>
 
-<p>
-I made this little page just to make you smile 😊<br>
-Sometimes small things carry the biggest feelings.
+<h1>Hello Mishra Ji 👋</h1>
+
+<p id="typing"></p>
+
+<button onclick="showSecret()">Open Message</button>
+
+<p id="secret">
+Bas itna kehna tha...  
+Aapse baat karke ek alag hi sukoon milta hai 🙂  
+Butki barosa kro pathak pe or ha
+Ajj ke lie kan pakad ke sorry
 </p>
 
-<button onclick="showMessage()">Click Me</button>
+<div class="gallery">
+<img src="bua.jpeg">
+<img src="adi.jpeg">
+<img src="bua2.jpeg">
+</div>
 
-<p id="message"></p>
+<div class="footer">
+Made by Pathak Ji ✨
+</div>
 
 </div>
 
 <script>
-function showMessage(){
-document.getElementById("message").innerHTML =
-"You are special to me and you always will be ❤️";
+
+/* typing text */
+
+const text = "Mishra ji, pata nahi kyun… par aapse baat karke dil ko alag sa sukoon milta hai Aap meri life me ek special jagah bana chuki ho";
+
+let i=0;
+
+function typing(){
+if(i < text.length){
+document.getElementById("typing").innerHTML += text.charAt(i);
+i++;
+setTimeout(typing,40);
 }
+}
+
+typing();
+
+/* show secret message */
+
+function showSecret(){
+document.getElementById("secret").style.display="block";
+}
+
+/* particles */
+
+function createParticle(){
+const particle = document.createElement("div");
+particle.className="particle";
+particle.style.left = Math.random()*100+"vw";
+particle.style.animationDuration = (5+Math.random()*5)+"s";
+document.body.appendChild(particle);
+
+setTimeout(()=>{
+particle.remove();
+},8000);
+}
+
+setInterval(createParticle,200);
+
 </script>
 
 </body>
