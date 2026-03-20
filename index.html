@@ -1,197 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Mishra Ji :)</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Love | MISHRA</title>
 
-<style>
+    <link rel="stylesheet" href="index.css">
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family: "Poppins", sans-serif;
-}
-
-body{
-height:100vh;
-background:#0f172a;
-display:flex;
-justify-content:center;
-align-items:center;
-color:white;
-overflow:hidden;
-}
-
-/* floating particles */
-
-.particle{
-position:absolute;
-width:6px;
-height:6px;
-background:#38bdf8;
-border-radius:50%;
-opacity:0.7;
-animation:float 8s linear infinite;
-}
-
-@keyframes float{
-0%{transform:translateY(0)}
-100%{transform:translateY(-100vh)}
-}
-
-/* main card */
-
-.card{
-background:#111827;
-padding:40px;
-border-radius:20px;
-width:650px;
-text-align:center;
-box-shadow:0 20px 40px rgba(0,0,0,0.5);
-animation:fade 1.5s ease;
-}
-
-@keyframes fade{
-from{opacity:0; transform:translateY(30px)}
-to{opacity:1; transform:translateY(0)}
-}
-
-h1{
-font-size:34px;
-margin-bottom:20px;
-color:#60a5fa;
-}
-
-#typing{
-font-size:20px;
-min-height:80px;
-line-height:1.5;
-}
-
-button{
-margin-top:25px;
-padding:12px 28px;
-font-size:18px;
-border:none;
-border-radius:10px;
-background:#38bdf8;
-color:#0f172a;
-cursor:pointer;
-transition:0.3s;
-}
-
-button:hover{
-transform:scale(1.1);
-}
-
-#secret{
-display:none;
-margin-top:20px;
-font-size:19px;
-color:#e2e8f0;
-}
-
-.gallery{
-margin-top:25px;
-display:flex;
-justify-content:center;
-gap:15px;
-}
-
-.gallery img{
-width:120px;
-height:120px;
-border-radius:12px;
-object-fit:cover;
-transition:0.3s;
-}
-
-.gallery img:hover{
-transform:scale(1.15) rotate(2deg);
-}
-
-.footer{
-margin-top:25px;
-font-size:15px;
-color:#94a3b8;
-}
-
-</style>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&family=Playfair+Display:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
-<div class="card">
+<!-- NAVBAR -->
+<nav>
+    <div class="logo">FOR MISHRA ❤️</div>
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#doodles">Doodles</a></li>
+        <li><a href="#shayri">Shayri</a></li>
+    </ul>
+</nav>
 
-<h1>Hello Mishra Ji 👋</h1>
+<!-- HERO -->
+<header id="home">
+    <div class="hero-content">
+        <h1>MISHRA 💫</h1>
+        <p>You are not just a part of my life... <br> you are the reason it feels beautiful.</p>
+        <a href="#about" class="btn">Explore More</a>
+    </div>
+</header>
 
-<p id="typing"></p>
+<!-- ABOUT -->
+<section id="about" class="container about-section">
 
-<button onclick="showSecret()">Open Message</button>
+    <div class="about-flex">
 
-<p id="secret">
-Bas itna kehna tha...  
-Aapse baat karke ek alag hi sukoon milta hai 🙂  
-Butki barosa kro pathak pe aur ha  
-Aaj ke liye kan pakad ke sorry 🙏
-</p>
+        <div class="about-img">
+            <img src="bua.jpeg" alt="Her Photo">
+        </div>
 
-<div class="gallery">
-<img src="bua.jpeg">
-<img src="adi.jpeg">
-<img src="bua2.jpeg">
-</div>
+        <div class="about-text">
+            <h2>Sunshine & Smiles ☀️</h2>
 
-<div class="footer">
-Made by Pathak Ji ✨
-</div>
+            <p>
+                You are the calm in my chaos and the smile in my hardest days.
+                Every little thing about you feels magical —
+                the way you talk, the way you care,
+                and even the way you get annoyed sometimes ❤️
+            </p>
 
-</div>
+            <p>
+                Being around you feels like home.
+                In a world full of noise, you are my peace.
+            </p>
 
-<script>
+            <a href="#shayri" class="btn">Read Shayri 💌</a>
 
-const text = `Mishra ji 🥺
-Pata nahi kyun, par aap se baat karte hi din thoda aur accha lagne lagta hai.
-Aapki awaaz, aapki baatein aur aapka simple sa style… sab kuch dil ko sukoon deta hai.
+        </div>
 
-Kabhi kabhi lagta hai ki aap bas yunhi muskurati raho aur main bas us muskurahat ka reason banta rahun.
-Sach bolu to, aap thodi si special ho… aur shayad mere liye thodi zyada hi. ✨
+    </div>
 
-Bas itna sa kehna tha…
-apna khayal rakhiye Mishra ji, kyunki aapki muskurahat kisi ke din ko bahut khoobsurat bana deti hai. 🌸`;
+</section>
 
-let i=0;
+<!-- DOODLES -->
+<section id="doodles" class="bg-alt">
+    <div class="container">
+        <h2 class="center">Creations 🎨</h2>
 
-function typing(){
-if(i < text.length){
-document.getElementById("typing").innerHTML += text.charAt(i);
-i++;
-setTimeout(typing,40);
-}
-}
+        <div class="grid">
 
-typing();
+            <div class="card">
+                <img src="doodle1.jpg" alt="Doodle 1">
+                <div class="card-text">
+                    <p>Made this thinking about your smile ❤️</p>
+                </div>
+            </div>
 
-function showSecret(){
-document.getElementById("secret").style.display="block";
-}
+            <div class="card">
+                <img src="doodle2.jpg" alt="Doodle 2">
+                <div class="card-text">
+                    <p>Every line has a little piece of you 💫</p>
+                </div>
+            </div>
 
-function createParticle(){
-const particle = document.createElement("div");
-particle.className="particle";
-particle.style.left = Math.random()*100+"vw";
-particle.style.animationDuration = (5+Math.random()*5)+"s";
-document.body.appendChild(particle);
+            <div class="card">
+                <img src="doodle3.jpg" alt="Doodle 3">
+                <div class="card-text">
+                    <p>You inspire my tiny creations 🎨</p>
+                </div>
+            </div>
 
-setTimeout(()=>{
-particle.remove();
-},8000);
-}
+        </div>
+    </div>
+</section>
 
-setInterval(createParticle,200);
+<!-- SHAYRI -->
+<section id="shayri" class="container">
+    <h2 class="center">Heartfelt Verses 💌</h2>
+    <div class="shayri-grid">
+        <div class="shayri-card">
+            <p>"Zindagi tujhse shuru, tujhpe khatm... <br> Tera saath hi mera sabse haseen ehsaas."</p>
+            <span>— PATHAK</span>
+        </div>
+        <div class="shayri-card">
+            <p>"Teri baaton me jo sukoon hai, <br> wo kahin aur nahi milta."</p>
+            <span>— PATHAK</span>
+        </div>
+    </div>
+</section>
 
-</script>
+<footer>
+    <p>Handcrafted with ❤️ by PATHAK</p>
+</footer>
 
 </body>
 </html>
