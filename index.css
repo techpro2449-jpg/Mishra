@@ -1,0 +1,257 @@
+:root {
+    --cream: #fffaf7;
+    --blush: #f7c6d0;
+    --teal: #2c3e50;
+    --accent: #e63946;
+    --text: #444;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--cream);
+    color: var(--text);
+}
+
+h1, h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--teal);
+}
+
+.container {
+    width: 85%;
+    max-width: 1100px;
+    margin: auto;
+    padding: 80px 0;
+}
+
+.center {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* NAVBAR */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 6%;
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+.logo {
+    font-weight: 700;
+    color: var(--teal);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--teal);
+    position: relative;
+}
+
+nav a::after {
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: var(--teal);
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    transition: 0.3s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+
+/* HERO */
+header {
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    background: linear-gradient(rgba(242,215,213,0.25), rgba(242,215,213,0.25)),
+                url('home.jpg');
+
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content {
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+header h1 {
+    font-size: 4rem;
+}
+
+header p {
+    margin: 20px 0;
+}
+
+/* BUTTON */
+.btn {
+    padding: 12px 25px;
+    background: var(--teal);
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+/* ABOUT SECTION */
+
+.about-section{
+    position: relative;
+}
+
+.about-flex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+}
+
+.about-text{
+    flex: 1;
+}
+
+.about-text h2{
+    font-size: 2.3rem;
+    margin-bottom: 20px;
+}
+
+.about-text p{
+    line-height: 1.7;
+    margin-bottom: 15px;
+    font-size: 1.05rem;
+}
+
+.about-img{
+    flex: 1;
+    text-align: center;
+}
+
+.about-img img{
+    width: 320px;
+    border-radius: 25px;
+    box-shadow: 12px 12px 0px var(--blush);
+    transition: 0.4s ease;
+}
+
+.about-img img:hover{
+    transform: scale(1.05) rotate(-1deg);
+}
+
+/* DOODLES SECTION */
+
+.bg-alt{
+    background: #fff;
+}
+
+.card{
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    transition: 0.35s;
+}
+
+.card img{
+    width:100%;
+    display:block;
+}
+
+.card-text{
+    padding:15px;
+    text-align:center;
+    font-size:14px;
+    color:var(--text);
+}
+
+.card:hover{
+    transform: translateY(-10px) scale(1.02);
+    box-shadow:0 10px 30px rgba(0,0,0,0.15);
+}
+
+/* SHAYRI */
+.shayri-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.shayri-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    border-left: 5px solid var(--blush);
+    max-width: 350px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.shayri-card span {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+    color: var(--teal);
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 30px;
+    background: var(--teal);
+    color: white;
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* RESPONSIVE */
+@media(max-width: 768px) {
+    .about-flex {
+        flex-direction: column;
+    }
+
+    header h1 {
+        font-size: 2.5rem;
+    }
+}
