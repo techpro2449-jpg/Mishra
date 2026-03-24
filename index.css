@@ -87,43 +87,57 @@ nav a:hover::after {
 
 /* HERO */
 header {
-    height: 90vh;
+    height: 92vh;
     display: flex;
-    justify-content: center;
     align-items: center;
-    text-align: center;
+    justify-content: flex-start;
+    padding-left: 8%;
 
-    background: linear-gradient(rgba(242,215,213,0.25), rgba(242,215,213,0.25)),
-                url('home.jpg');
+    background:
+    linear-gradient(
+        to right,
+        rgba(255,250,247,0.85) 0%,
+        rgba(255,250,247,0.65) 30%,
+        rgba(255,250,247,0.15) 55%,
+        rgba(255,250,247,0.05) 75%
+    ),
+    url("home1.jpeg");
 
     background-size: cover;
-    background-position: center;
+    background-position: center right;
 }
 
-.hero-content {
+.hero-content{
+    max-width: 500px;
+    text-align: left;
     animation: fadeIn 1.5s ease-in-out;
 }
 
-header h1 {
+header h1{
     font-size: 4rem;
+    margin-bottom: 10px;
 }
 
-header p {
-    margin: 20px 0;
+header p{
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin: 20px 0 30px 0;
 }
-
 /* BUTTON */
-.btn {
-    padding: 12px 25px;
+.btn{
+    padding: 12px 28px;
     background: var(--teal);
-    color: white;
-    text-decoration: none;
-    border-radius: 30px;
-    transition: 0.3s;
+    color:white;
+    text-decoration:none;
+    border-radius:30px;
+    font-size:14px;
+    letter-spacing:1px;
+    transition: all 0.3s ease;
 }
 
-.btn:hover {
+.btn:hover{
     transform: translateY(-3px);
+    box-shadow:0 8px 18px rgba(0,0,0,0.15);
 }
 
 /* ABOUT SECTION */
@@ -176,29 +190,42 @@ header p {
     background: #fff;
 }
 
+/* GRID */
+.grid{
+    display:grid;
+    grid-template-columns: repeat(auto-fit,minmax(230px,1fr));
+    gap:25px;
+}
+
+/* CARD */
 .card{
     background: white;
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 6px 20px rgba(0,0,0,0.08);
     transition: 0.35s;
+    padding:15px;
 }
 
 .card img{
     width:100%;
-    display:block;
+    height:220px;          
+    object-fit:contain;  
+    background:#fff;      
 }
 
+/* TEXT */
 .card-text{
-    padding:15px;
+    padding-top:10px;
     text-align:center;
     font-size:14px;
     color:var(--text);
 }
 
+/* HOVER */
 .card:hover{
-    transform: translateY(-10px) scale(1.02);
-    box-shadow:0 10px 30px rgba(0,0,0,0.15);
+    transform: translateY(-8px);
+    box-shadow:0 10px 25px rgba(0,0,0,0.15);
 }
 
 /* SHAYRI */
@@ -207,6 +234,7 @@ header p {
     justify-content: center;
     gap: 30px;
     flex-wrap: wrap;
+    margin-bottom: 30px;
 }
 
 .shayri-card {
