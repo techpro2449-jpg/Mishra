@@ -273,7 +273,6 @@ footer {
     }
 }
 
-
 /* RESPONSIVE */
 @media(max-width: 768px) {
 
@@ -297,10 +296,6 @@ footer {
 
     nav ul li {
         margin: 10px 15px 0 0;
-    }
-
-    nav ul li:nth-child(2) {
-        display: none;
     }
 
 }
