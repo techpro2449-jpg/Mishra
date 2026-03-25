@@ -273,9 +273,16 @@ footer {
     }
 }
 
-.menu-toggle{
-    display:none;
+@media (min-width: 769px) {
+    .menu-toggle{
+        display:none;
+    }
+    
+    nav ul{
+        display: flex;
+    }
 }
+
 
 /* RESPONSIVE + MOBILE NAV */
 @media (max-width: 768px) {
