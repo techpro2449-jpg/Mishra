@@ -1,0 +1,258 @@
+:root {
+    --cream: #fffaf7;
+    --card: #ffffff;
+    --text: #444;
+    --accent: #f7c6d0;
+    --teal: #d16a8a; /* FIXED */
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+}
+
+/* NAVBAR */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 6%;
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+.logo {
+    font-weight: 700;
+    color: var(--teal);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--teal);
+    position: relative;
+}
+
+nav a::after {
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: var(--teal);
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    transition: 0.3s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* HEADER */
+.header{
+    text-align:center;
+    padding:70px 20px 30px;
+    background: linear-gradient(to bottom, #fffaf7, #ffeef3);
+    position: relative;
+}
+
+.header h1{
+    font-family:'Playfair Display', serif;
+    font-size:2.5rem;
+    color: var(--teal);
+    letter-spacing: 1px;
+}
+
+.header p{
+    margin:12px auto 25px;
+    font-size:1rem;
+    max-width:500px;
+    opacity:0.8;
+    line-height:1.5;
+}
+
+.header::before{
+    content:'';
+    position:absolute;
+    width:200px;
+    height:200px;
+    background: radial-gradient(circle, #ffdce6, transparent);
+    top:-50px;
+    left:10%;
+    filter: blur(40px);
+    z-index:0;
+}
+
+.header::after{
+    content:'';
+    position:absolute;
+    width:200px;
+    height:200px;
+    background: radial-gradient(circle, #ffeef3, transparent);
+    top:-50px;
+    right:10%;
+    filter: blur(40px);
+    z-index:0;
+}
+
+.header *{
+    position: relative;
+    z-index: 1;
+}
+
+/* TABS */
+.tabs{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    flex-wrap: wrap;
+}
+
+.tabs button{
+    border:none;
+    padding:10px 20px;
+    border-radius:30px;
+    background:#f3f3f3;
+    cursor:pointer;
+    font-weight:500;
+    transition: all 0.3s ease;
+}
+
+.tabs button:hover{
+    transform: translateY(-2px);
+    box-shadow:0 5px 12px rgba(0,0,0,0.1);
+}
+
+.tabs .active{
+    background: linear-gradient(135deg, var(--accent), var(--teal));
+    color:#fff;
+    box-shadow:0 6px 15px rgba(209,106,138,0.4);
+}
+/* GRID */
+.doodle-container{
+    width:90%;
+    max-width:1100px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(160px,1fr));
+    gap:20px;
+    padding:30px 0 60px;
+}
+
+/* CARD */
+.doodle-card{
+    background:var(--card);
+    padding:12px;
+    border-radius:18px;
+    box-shadow:0 8px 18px rgba(0,0,0,0.08);
+    text-align:center;
+    transition:0.3s;
+}
+
+.doodle-card img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+    border-radius:12px;
+}
+
+.doodle-card p{
+    margin-top:10px;
+    font-size:14px;
+}
+
+.doodle-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 12px 25px rgba(0,0,0,0.15);
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:25px;
+    background:#fff;
+}
+
+/* IMAGE HOVER EFFECT */
+.doodle-card img {
+    transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.doodle-card:hover img {
+    transform: scale(1.08);
+    filter: brightness(1.05);
+}
+
+/* LIGHTBOX */
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.85);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    backdrop-filter: blur(8px);
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 85%;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    animation: zoomIn 0.3s ease;
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.7);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* CLOSE BUTTON */
+.lightbox .close {
+    position: absolute;
+    top: 25px;
+    right: 35px;
+    font-size: 40px;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.lightbox .close:hover {
+    color: var(--accent);
+}
+
+/* SLIGHT CARD IMPROVEMENT */
+.doodle-card {
+    overflow: hidden;
+    cursor: pointer;
+}
