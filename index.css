@@ -341,20 +341,21 @@ footer {
 
 }
 
-/* 1. Hide the profile image on desktop by default */
+
 .hero-profile-img {
     display: none;
 }
 
 /* 2. Mobile specific Hero styles */
+/* MOBILE HERO PERFECT FIX */
 @media (max-width: 768px) {
+
     header {
         height: auto;
-        padding: 60px 20px; /* More padding for breathing room */
+        padding: 60px 20px;
         justify-content: center;
         text-align: center;
-        /* Remove the background image overlay for a cleaner look */
-        background: var(--cream); 
+        background: var(--cream);
     }
 
     .hero-content {
@@ -365,21 +366,25 @@ footer {
         align-items: center;
     }
 
+    /* CIRCLE IMAGE CONTAINER */
     .hero-profile-img {
         display: block;
-        width: 220px; /* Size of the circle */
-        height: 220px;
+        width: 230px;
+        height: 230px;
         margin-bottom: 30px;
         border-radius: 50%;
         overflow: hidden;
-        border: 5px solid white;
+
+        border: 5px solid #fff;
         box-shadow: 0 10px 25px rgba(0,0,0,0.1);
     }
 
+    /* PERFECT IMAGE FIT */
     .hero-profile-img img {
         width: 100%;
         height: 100%;
-        object-fit: cover;
+        object-fit: cover;              
+        object-position: 70% center;   
     }
 
     header h1 {
@@ -391,5 +396,45 @@ footer {
         font-size: 1rem;
         margin-bottom: 30px;
         padding: 0 10px;
+    }
+
+    /* FIX NAV */
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        right: 6%;
+        top: 15px;
+    }
+
+    nav ul {
+        position: absolute;
+        top: 60px;
+        right: 6%;
+        width: 170px;
+
+        flex-direction: column;
+        display: none;
+
+        background: rgba(255,255,255,0.95);
+        backdrop-filter: blur(10px);
+
+        border-radius: 12px;
+        padding: 15px 0;
+
+        box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    /* STACK ABOUT SECTION */
+    .about-flex {
+        flex-direction: column;
     }
 }
