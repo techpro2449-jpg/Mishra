@@ -3,59 +3,149 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Doodles | Mishra ❤️</title>
 
-<title>More Doodles | MISHRA</title>
+<link rel="stylesheet" href="doodles.css">
 
-<link rel="stylesheet" href="index.css">
-
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&family=Playfair+Display:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<nav>
-    <div class="logo">FOR MISHRA ❤️</div>
+<!-- FULLSCREEN VIEWER -->
+<div class="lightbox" id="lightbox">
+    <span class="close">&times;</span>
+    <img id="lightbox-img">
+</div>
 
+<!-- NAV -->
+<nav>
+    <h2 class="logo">For Mishra ❤️</h2>
     <ul>
         <li><a href="index.html">Home</a></li>
     </ul>
 </nav>
 
+<!-- HEADER -->
+<section class="header">
+    <h1>The Doodle Collection</h1>
+    <p>A curated gallery of messy lines, happy moments, and heartfelt strokes by us.</p>
 
-<section class="container">
-    <h2 class="center">More Creations 🎨</h2>
-
-    <div class="grid">
-
-        <div class="card">
-            <img src="doodle4.jpg">
-            <div class="card-text">
-                <p>Another little memory of you 💕</p>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="doodle5.jpg">
-            <div class="card-text">
-                <p>Inspired by your vibe ✨</p>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="doodle6.jpg">
-            <div class="card-text">
-                <p>Because you inspire creativity 🎨</p>
-            </div>
-        </div>
-
+    <div class="tabs">
+        <button onclick="filterDoodles('mishra')">
+            Mishra's Doodles 🌸
+        </button>
+        <button class="active" onclick="filterDoodles('mine')">
+            Pathak's Doodles ✨
+        </button>
     </div>
-
 </section>
 
+<!-- DOODLES -->
+<section class="doodle-container">
 
+    <!-- YOURS -->
+    <div class="doodle-card mine"><img src="P_doodle1.jpeg"><p>My Doodle 1</p></div>
+    <div class="doodle-card mine"><img src="P_doodle2.jpeg"><p>My Doodle 2</p></div>
+    <div class="doodle-card mine"><img src="doodle/P_doodle3.jpeg"><p>My Doodle 3</p></div>
+    <div class="doodle-card mine"><img src="doodle/P_doodle4.jpeg"><p>My Doodle 4</p></div>
+    <div class="doodle-card mine"><img src="doodle/P_doodle5.jpeg"><p>My Doodle 5</p></div>
+    <div class="doodle-card mine"><img src="doodle/P_doodle6.jpeg"><p>My Doodle 6</p></div>
+    <div class="doodle-card mine"><img src="doodle/P_doodle7.jpeg"><p>My Doodle 7</p></div>
+    <div class="doodle-card mine"><img src="doodle/P_doodle8.jpeg"><p>My Doodle 8</p></div>
+    <div class="doodle-card mine"><img src="doodle/P_doodle9.jpeg"><p>My Doodle 9</p></div>
+    <div class="doodle-card mine"><img src="doodle/P_doodle10.jpeg"><p>My Doodle 10</p></div>
+    <div class="doodle-card mine"><img src="doodle/P_doodle11.jpeg"><p>My Doodle 11</p></div>
+    <div class="doodle-card mine"><img src="doodle/P_doodle12.jpeg"><p>My Doodle 12</p></div>
+    <div class="doodle-card mine"><img src="doodle/P_doodle13.jpeg"><p>My Doodle 13</p></div>
+    <div class="doodle-card mine"><img src="doodle/P_doodle14.jpeg"><p>My Doodle 14</p></div>
+    <div class="doodle-card mine"><img src="doodle/P_doodle15.jpeg"><p>My Doodle 15</p></div>
+    <div class="doodle-card mine"><img src="doodle/P_doodle16.jpeg"><p>My Doodle 16</p></div>
+    <div class="doodle-card mine"><img src="doodle/P_doodle17.jpeg"><p>My Doodle 17</p></div>
+    <div class="doodle-card mine"><img src="doodle/P_doodle18.jpeg"><p>My Doodle 17</p></div>
+
+
+    <!-- MISHRA -->
+    <div class="doodle-card mishra"><img src="M_doodle1.jpeg"><p>Doodle 1</p></div>
+    <div class="doodle-card mishra"><img src="doodle/M_doodle2.jpeg"><p>Doodle 1</p></div>
+    <div class="doodle-card mishra"><img src="doodle/M_doodle3.jpeg"><p>Doodle 2</p></div>
+    <div class="doodle-card mishra"><img src="doodle/M_doodle4.jpeg"><p>Doodle 3</p></div>
+    <div class="doodle-card mishra"><img src="doodle/M_doodle5.jpeg"><p>Doodle 4</p></div>
+    <div class="doodle-card mishra"><img src="doodle/M_doodle6.jpeg"><p>Doodle 5</p></div>
+    <div class="doodle-card mishra"><img src="doodle/M_doodle7.jpeg"><p>Doodle 6</p></div>
+    <div class="doodle-card mishra"><img src="doodle/M_doodle8.jpeg"><p>Doodle 7</p></div>
+    <div class="doodle-card mishra"><img src="doodle/M_doodle9.jpeg"><p>Doodle 8</p></div>
+    <div class="doodle-card mishra"><img src="doodle/M_doodle10.jpeg"><p>Doodle 9</p></div>
+    <div class="doodle-card mishra"><img src="doodle/M_doodle11.jpeg"><p>Doodle 10</p></div>
+    <div class="doodle-card mishra"><img src="doodle/M_doodle12.jpeg"><p>Doodle 11</p></div>
+    <div class="doodle-card mishra"><img src="doodle/M_doodle13.jpeg"><p>Doodle 12</p></div>
+    <div class="doodle-card mishra"><img src="doodle/M_doodle14.jpeg"><p>Doodle 13</p></div>
+    <div class="doodle-card mishra"><img src="doodle/M_doodle15.jpeg"><p>Doodle 14</p></div>
+    <div class="doodle-card mishra"><img src="doodle/M_doodle16.jpeg"><p>Doodle 15</p></div>
+    <div class="doodle-card mishra"><img src="doodle/M_doodle17.jpeg"><p>Doodle 17</p></div>
+    <div class="doodle-card mishra"><img src="doodle/M_doodle18.jpeg"><p>Doodle 18</p></div>
+    <div class="doodle-card mishra"><img src="doodle/M_doodle19.jpeg"><p>Doodle 19</p></div>
+    <div class="doodle-card mishra"><img src="doodle/M_doodle20.jpeg"><p>Doodle 20</p></div>
+    <div class="doodle-card mishra"><img src="doodle/M_doodle21.jpeg"><p>Doodle 21</p></div>
+    <div class="doodle-card mishra"><img src="doodle/M_doodle22.jpeg"><p>Doodle 22</p></div>
+    <div class="doodle-card mishra"><img src="doodle/M_doodle23.jpeg"><p>Doodle 23</p></div>
+    <div class="doodle-card mishra"><img src="doodle/M_doodle24.jpeg"><p>Doodle 24</p></div>
+    <div class="doodle-card mishra"><img src="doodle/M_doodle25.jpeg"><p>Doodle 25</p></div>
+    <div class="doodle-card mishra"><img src="doodle/M_doodle26.jpeg"><p>Doodle 26</p></div>
+
+    
+</section>
+
+<!-- FOOTER -->
 <footer>
-<p>Made with ❤️ by PATHAK</p>
+    <p>Drawn with love, preserved with joy ❤️</p>
 </footer>
+
+<!-- JS -->
+<script>
+function filterDoodles(type) {
+    const mishra = document.querySelectorAll('.mishra');
+    const mine = document.querySelectorAll('.mine');
+    const buttons = document.querySelectorAll('.tabs button');
+
+    buttons.forEach(btn => btn.classList.remove('active'));
+
+    if(type === 'mishra'){
+        mishra.forEach(card => card.style.display = 'block');
+        mine.forEach(card => card.style.display = 'none');
+        buttons[0].classList.add('active');
+    } else {
+        mishra.forEach(card => card.style.display = 'none');
+        mine.forEach(card => card.style.display = 'block');
+        buttons[1].classList.add('active');
+    }
+}
+
+// DEFAULT VIEW
+filterDoodles('mishra');
+
+// LIGHTBOX FUNCTIONALITY
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+const closeBtn = document.querySelector(".lightbox .close");
+
+document.querySelectorAll(".doodle-card img").forEach(img => {
+    img.addEventListener("click", () => {
+        lightbox.style.display = "flex";
+        lightboxImg.src = img.src;
+    });
+});
+
+// CLOSE LIGHTBOX
+closeBtn.onclick = () => lightbox.style.display = "none";
+
+// CLOSE ON OUTSIDE CLICK
+lightbox.onclick = (e) => {
+    if(e.target !== lightboxImg) {
+        lightbox.style.display = "none";
+    }
+};
+</script>
 
 </body>
 </html>
