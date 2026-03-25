@@ -340,3 +340,56 @@ footer {
     }
 
 }
+
+/* 1. Hide the profile image on desktop by default */
+.hero-profile-img {
+    display: none;
+}
+
+/* 2. Mobile specific Hero styles */
+@media (max-width: 768px) {
+    header {
+        height: auto;
+        padding: 60px 20px; /* More padding for breathing room */
+        justify-content: center;
+        text-align: center;
+        /* Remove the background image overlay for a cleaner look */
+        background: var(--cream); 
+    }
+
+    .hero-content {
+        max-width: 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-profile-img {
+        display: block;
+        width: 220px; /* Size of the circle */
+        height: 220px;
+        margin-bottom: 30px;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 5px solid white;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+
+    .hero-profile-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    header h1 {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+    }
+
+    header p {
+        font-size: 1rem;
+        margin-bottom: 30px;
+        padding: 0 10px;
+    }
+}
