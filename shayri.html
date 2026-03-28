@@ -3,51 +3,84 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shayari | Mishra ❤️</title>
 
-<title>More Shayri 💌</title>
+<link rel="stylesheet" href="shayri.css">
 
-<link rel="stylesheet" href="index.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
+<!-- NAV -->
 <nav>
-    <div class="logo">FOR MISHRA ❤️</div>
+    <h2 class="logo">For Mishra ❤️</h2>
     <ul>
         <li><a href="index.html">Home</a></li>
     </ul>
 </nav>
 
-<section class="container">
-<h2 class="center">More Shayri 💌</h2>
+<!-- HEADER -->
+<section class="header">
+    <h1>Our Shayari ❤️</h1>
+    <p>Words we never said directly… but felt deeply.</p>
 
-<div class="shayri-grid">
+    <div class="tabs">
+        <button onclick="filterShayari('mishra')">Mishra's Shayari 🌸</button>
+        <button class="active" onclick="filterShayari('mine')">Pathak's Shayari ✨</button>
+    </div>
+</section>
 
-<div class="shayri-card">
-<p>"Tera naam likha hai dil pe, <br>
-Aur dil kisi aur ka hota nahi."</p>
-<span>— PATHAK</span>
-</div>
+<!-- SHAYARI CONTAINER -->
+<section class="shayari-container">
 
-<div class="shayri-card">
-<p>"Tu paas ho ya door, <br>
-Mera dil sirf tera hi rahega."</p>
-<span>— PATHAK</span>
-</div>
+    <!-- YOUR SHAYARI -->
+    <div class="shayari-card mine">
+        <p>To puchti hai kya dekhta hu,<br>
+        main bas tujhe hi sochta hu ❤️</p>
+    </div>
 
-<div class="shayri-card">
-<p>"Mohabbat ka matlab tu, <br>
-Meri har dua ka jawab tu."</p>
-<span>— PATHAK</span>
-</div>
+    <div class="shayari-card mine">
+        <p>Chal bye bacha 🙂‍↔️<br>
+        par dil keh raha ruk ja zara…</p>
+    </div>
 
-</div>
+    <!-- MISHRA SHAYARI -->
+    <div class="shayari-card mishra">
+        <p>Khamoshi bhi tumhari,<br>
+        sabse pyari lagti hai ❤️</p>
+    </div>
 
 </section>
 
+<!-- FOOTER -->
 <footer>
-<p>Always yours ❤️</p>
+    <p>Written with love, felt forever ❤️</p>
 </footer>
+
+<!-- JS -->
+<script>
+function filterShayari(type) {
+    const mishra = document.querySelectorAll('.mishra');
+    const mine = document.querySelectorAll('.mine');
+    const buttons = document.querySelectorAll('.tabs button');
+
+    buttons.forEach(btn => btn.classList.remove('active'));
+
+    if(type === 'mishra'){
+        mishra.forEach(card => card.style.display = 'block');
+        mine.forEach(card => card.style.display = 'none');
+        buttons[0].classList.add('active');
+    } else {
+        mishra.forEach(card => card.style.display = 'none');
+        mine.forEach(card => card.style.display = 'block');
+        buttons[1].classList.add('active');
+    }
+}
+
+// DEFAULT
+filterShayari('mine');
+</script>
 
 </body>
 </html>
