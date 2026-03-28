@@ -1,0 +1,347 @@
+:root {
+    --pink: #ffdde1;
+    --rose: #d16a8a;
+    --soft: #fff5f7;
+    --text: #444;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Montserrat', sans-serif;
+    background: linear-gradient(to bottom, #fff, var(--pink));
+    color: var(--text);
+}
+
+/* NAVBAR */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 6%;
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+.logo {
+    font-weight: 700;
+    color: var(--rose);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--rose);
+    position: relative;
+}
+
+nav a::after {
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: var(--rose);
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    transition: 0.3s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* HERO */
+.hero {
+    position: relative;
+    text-align: center;
+    padding: 120px 20px 100px;
+    background: linear-gradient(135deg, #fff0f5, #ffe4ec);
+    overflow: hidden;
+}
+
+/* GLOW BG */
+.hero::before,
+.hero::after {
+    content: '';
+    position: absolute;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    filter: blur(90px);
+    z-index: 0;
+}
+
+.hero::before {
+    background: #ffb6c1;
+    top: -100px;
+    left: -100px;
+}
+
+.hero::after {
+    background: #ffd1dc;
+    bottom: -100px;
+    right: -100px;
+}
+
+/* CONTENT */
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.2rem;
+    color: var(--rose);
+    letter-spacing: 1px;
+    animation: fadeUp 1s ease;
+}
+
+.hero p {
+    margin-top: 15px;
+    font-size: 1.1rem;
+    opacity: 0.85;
+    animation: fadeUp 1.4s ease;
+}
+
+/* FLOATING HEARTS */
+.hearts span {
+    position: absolute;
+    bottom: -20px;
+    font-size: 22px;
+    animation: floatHearts 6s linear infinite;
+    opacity: 0.6;
+}
+
+.hearts span:nth-child(1){ left:20%; animation-delay:0s; }
+.hearts span:nth-child(2){ left:40%; animation-delay:2s; }
+.hearts span:nth-child(3){ left:60%; animation-delay:4s; }
+.hearts span:nth-child(4){ left:80%; animation-delay:1s; }
+
+/* ANIMATIONS */
+@keyframes floatHearts {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 0.6;
+    }
+    100% {
+        transform: translateY(-300px) scale(1.6);
+        opacity: 0;
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* TIMER SECTION */
+.timer-section {
+    text-align: center;
+    padding: 80px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Background hearts */
+.timer-section::before {
+    content: "💖 💕 💗 💓 💞";
+    position: absolute;
+    font-size: 60px;
+    opacity: 0.08;
+    top: 10%;
+    left: 0;
+    width: 100%;
+    animation: floatHearts 20s linear infinite;
+}
+
+.section-title {
+    font-family: 'Playfair Display';
+    font-size: 2.5rem;
+    color: var(--rose);
+    margin-bottom: 40px;
+}
+
+/* CARD */
+.timer-card {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    background: rgba(255,255,255,0.6);
+    backdrop-filter: blur(15px);
+    padding: 40px;
+    border-radius: 30px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    max-width: 800px;
+    margin: auto;
+}
+
+/* TIME BOX */
+.time-box {
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    color: white;
+    padding: 20px;
+    border-radius: 20px;
+    width: 120px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.time-box:hover {
+    transform: translateY(-8px) scale(1.05);
+}
+
+.time-box span {
+    font-size: 2rem;
+    font-weight: bold;
+    display: block;
+}
+
+.time-box p {
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+/* LOVE TEXT */
+.love-text {
+    margin-top: 25px;
+    font-size: 1.1rem;
+    color: var(--rose);
+    opacity: 0.9;
+}
+
+/* FIRST MEET */
+.first-meet{
+    text-align:center;
+    padding:70px 20px 30px;
+}
+
+.first-meet h2{
+    font-family:'Playfair Display';
+    color:var(--rose);
+    margin-bottom:25px;
+}
+
+.meet-card{
+    background:rgba(255,255,255,0.6);
+    backdrop-filter:blur(10px);
+    padding:30px;
+    border-radius:25px;
+    max-width:600px;
+    margin:auto;
+    box-shadow:0 15px 35px rgba(0,0,0,0.1);
+}
+
+.meet-card h3{
+    font-size:1.8rem;
+    color:var(--rose);
+    margin-bottom:10px;
+}
+
+/* MOMENTS */
+.moment {
+    padding: 80px 8%;
+}
+
+.moment h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    color: var(--rose);
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+}
+
+.moment-grid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.moment.alt .moment-grid {
+    flex-direction: row-reverse;
+}
+
+.moment .image img {
+    width: 320px;
+    max-width: 90%;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    transition: 0.4s;
+}
+
+.moment .image img:hover {
+    transform: scale(1.05);
+}
+
+.moment .text {
+    max-width: 420px;
+}
+
+.moment .text h3 {
+    font-size: 1.6rem;
+    color: var(--rose);
+    margin-bottom: 10px;
+}
+
+.moment .text p {
+    line-height: 1.6;
+    font-size: 1rem;
+    opacity: 0.85;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .moment-grid {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .moment.alt .moment-grid {
+        flex-direction: column;
+    }
+}
+
+/* VIDEO */
+.video-section{
+    text-align:center;
+    padding:60px 20px;
+}
+
+.video-box video{
+    width:90%;
+    max-width:500px;
+    border-radius:20px;
+    box-shadow:0 20px 40px rgba(0,0,0,0.2);
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:20px;
+    background:#fff;
+}
