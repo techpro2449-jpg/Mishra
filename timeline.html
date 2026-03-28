@@ -2,59 +2,175 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Our Timeline ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="index.css">
+<title>Our Journey ❤️</title>
+<link rel="stylesheet" href="timeline.css">
 
-<style>
-.timeline{
-    max-width:700px;
-    margin:auto;
-    padding:60px 0;
-}
-
-.timeline-item{
-    background:white;
-    padding:20px;
-    border-radius:12px;
-    margin-bottom:20px;
-    border-left:5px solid #f7c6d0;
-    box-shadow:0 4px 15px rgba(0,0,0,0.05);
-}
-</style>
-
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
+<!-- NAV -->
 <nav>
-    <div class="logo">FOR MISHRA ❤️</div>
+    <h2 class="logo">For Mishra ❤️</h2>
 
     <ul>
         <li><a href="index.html">Home</a></li>
     </ul>
 </nav>
 
-<section class="timeline">
+<!-- HERO -->
+<section class="hero">
 
-<h2 class="center">Our Story Timeline 💫</h2>
+    <div class="hero-content">
+        <h1>Our Journey 💞</h1>
+        <p>Every second with you is my favorite memory</p>
+    </div>
 
-<div class="timeline-item">
-<h3>First Talk 💬</h3>
-<p>The day everything started...</p>
-</div>
-
-<div class="timeline-item">
-<h3>First Laugh 😄</h3>
-<p>When we realised we enjoy each other's company.</p>
-</div>
-
-<div class="timeline-item">
-<h3>Special Moment ❤️</h3>
-<p>The day I knew you are important to me.</p>
-</div>
+    <!-- FLOATING HEARTS -->
+    <div class="hearts">
+        <span>❤️</span>
+        <span>💖</span>
+        <span>💕</span>
+        <span>💗</span>
+    </div>
 
 </section>
+
+
+<!-- TIMER SECTION -->
+<section class="timer-section">
+
+    <h2 class="section-title">From Friends to Forever 💞</h2>
+
+    <div class="timer-card">
+
+        <div class="time-box">
+            <span id="days">0</span>
+            <p>Days</p>
+        </div>
+
+        <div class="time-box">
+            <span id="hours">0</span>
+            <p>Hours</p>
+        </div>
+
+        <div class="time-box">
+            <span id="minutes">0</span>
+            <p>Minutes</p>
+        </div>
+
+        <div class="time-box">
+            <span id="seconds">0</span>
+            <p>Seconds</p>
+        </div>
+
+    </div>
+
+    <p class="love-text">Every second with you is my forever ❤️</p>
+
+</section>
+
+<!-- DAY WE MET -->
+<section class="first-meet">
+
+    <h2>✨ The Day It All Started ✨</h2>
+
+    <div class="meet-card">
+        <h3>2 January 2026 💫</h3>
+        <p>
+            The day we met…  
+            I didn’t know it would become the most important chapter of my life.  
+            But somehow, everything started making sense from that moment ❤️
+        </p>
+    </div>
+
+</section>
+
+<!-- YES MOMENT -->
+<section class="moment">
+    <h2>Her Big “YES” 💫</h2>
+
+    <div class="moment-grid">
+        <div class="image">
+            <img src="yes.jpeg" alt="Her Yes Moment">
+        </div>
+
+        <div class="text">
+            <h3>The most beautiful moment of my life</h3>
+            <p>
+                When you said YES… everything paused for a second.  
+                That one word changed my world forever.  
+                That moment… is my forever.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- YOUR REACTION -->
+<section class="moment alt">
+    
+
+    <div class="moment-grid">
+        <div class="image">
+            <img src="welcome.jpeg" alt="Reaction">
+        </div>
+
+        <div class="text">
+            <h3>Welcome to My Life</h3>
+            <p>
+                That smile… that look…  
+                I knew right then —  
+                I found my home in you.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- VIDEO -->
+<section class="video-section">
+
+    <h2>A Memory From That Day 🎥</h2>
+
+    <div class="video-box">
+        <video controls>
+            <source src="doodle/vd1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+</section>
+    
+<footer>
+    <p>Built with love, for the one I love ❤️</p>
+</footer>
+
+<!-- JS -->
+<script>
+const startDate = new Date("March 27, 2026 23:35:00").getTime();
+
+function updateTimer() {
+    const now = new Date().getTime();
+    const diff = now - startDate;
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((diff / (1000 * 60)) % 60);
+    const seconds = Math.floor((diff / 1000) % 60);
+
+    document.getElementById("days").innerText = days;
+    document.getElementById("hours").innerText = hours;
+    document.getElementById("minutes").innerText = minutes;
+    document.getElementById("seconds").innerText = seconds;
+}
+
+setInterval(updateTimer, 1000);
+updateTimer();
+</script>
+
+
 
 </body>
 </html>
