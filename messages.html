@@ -2,59 +2,122 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Messages 💌</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Messages | For My Love ❤️</title>
 
-<link rel="stylesheet" href="index.css">
+<link rel="stylesheet" href="message.css">
 
-<style>
-
-.message-box{
-max-width:600px;
-margin:auto;
-padding:70px 0;
-}
-
-.msg{
-background:white;
-padding:20px;
-border-radius:12px;
-margin-bottom:20px;
-box-shadow:0 4px 12px rgba(0,0,0,0.05);
-}
-
-</style>
-
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<nav>
-<div class="logo">FOR MISHRA ❤️</div>
-
-<ul>
-<li><a href="index.html">Home</a></li>
-</ul>
-
+<!-- NAVBAR -->
+<nav class="navbar">
+    <h2 class="logo">For Mishra ❤️</h2>
+    <a href="index.html">Home</a>
 </nav>
 
-<section class="message-box">
+<!-- HERO -->
+<header class="hero">
+    <h1 class="main-title">Messages For You 💌</h1>
+    <p class="subtitle">Every word is from my heart</p>
+</header>
 
-<h2 class="center">Little Messages 💌</h2>
+<!-- CATEGORY CARDS -->
+<section class="categories">
+    <div class="card" onclick="displayMessages('morning')">
+        <span class="icon">🌅</span>
+        <h3>Good Morning</h3>
+    </div>
 
-<div class="msg">
-<p>I hope you know how special you are to me ❤️</p>
-</div>
+    <div class="card" onclick="displayMessages('night')">
+        <span class="icon">🌙</span>
+        <h3>Good Night</h3>
+    </div>
 
-<div class="msg">
-<p>No matter what happens, I’ll always be here 💫</p>
-</div>
+    <div class="card" onclick="displayMessages('love')">
+        <span class="icon">💕</span>
+        <h3>Love Messages</h3>
+    </div>
 
-<div class="msg">
-<p>You make ordinary days feel magical ☀️</p>
-</div>
-
+    <div class="card" onclick="displayMessages('miss')">
+        <span class="icon">🥺</span>
+        <h3>Miss You</h3>
+    </div>
 </section>
 
-</body>
+<!-- MESSAGE GRID -->
+<section id="message-grid" class="message-grid"></section>
 
+<!-- SPECIAL BOX -->
+<section class="highlight-box">
+    <h2 class="cursive">Today's Message</h2>
+    <p id="daily-text">"You're the peace in my chaotic world. I love you."</p>
+    <button class="btn-love" onclick="spawnHeart()">Send You Love ❤️</button>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <p>Made with ❤️ just for you</p>
+</footer>
+
+<!-- SCRIPT -->
+<script>
+const messages = {
+    morning: [
+        { t: "Good morning beautiful! Hope your day is as amazing as you.", e: "☀️" },
+        { t: "The best part of my morning is thinking of you.", e: "☕" },
+        { t: "Sending you a virtual kiss to start your day!", e: "💋" }
+    ],
+    night: [
+        { t: "Sleep tight, my love. I'll be dreaming of you.", e: "🌙" },
+        { t: "Wish I was there to tuck you in. Goodnight!", e: "🧸" },
+        { t: "The stars are jealous of your glow tonight.", e: "✨" }
+    ],
+    love: [
+        { t: "I love you more than all the stars in the sky.", e: "♾️" },
+        { t: "You are my heart's favorite person.", e: "💖" },
+        { t: "Every love song reminds me of us.", e: "🎵" }
+    ],
+    miss: [
+        { t: "Missing your smile every single second.", e: "🥺" },
+        { t: "Counting down the moments until I see you again.", e: "⏳" },
+        { t: "My arms feel empty without you in them.", e: "🫂" }
+    ]
+};
+
+function displayMessages(category) {
+    const grid = document.getElementById('message-grid');
+    grid.innerHTML = '';
+
+    messages[category].forEach(msg => {
+        const div = document.createElement('div');
+        div.className = 'msg-item';
+        div.innerHTML = `<p>${msg.t} ${msg.e}</p>`;
+        grid.appendChild(div);
+    });
+
+    grid.scrollIntoView({ behavior: 'smooth' });
+}
+
+function spawnHeart() {
+    const heart = document.createElement('div');
+    heart.className = 'heart-fly';
+    heart.innerHTML = '❤️';
+
+    heart.style.left = Math.random() * 100 + 'vw';
+    heart.style.animationDuration = (Math.random() * 2 + 3) + 's';
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 5000);
+}
+
+setInterval(spawnHeart, 4000);
+</script>
+
+</body>
 </html>
