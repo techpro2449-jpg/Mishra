@@ -1,0 +1,178 @@
+:root{
+    --cream:#fffaf7;
+    --card:#ffffff;
+    --text:#444;
+    --accent:#f7c6d0;
+    --teal:#d16a8a;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:var(--cream);
+    color:var(--text);
+}
+
+/* NAVBAR */
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 6%;
+    background:rgba(255,255,255,0.8);
+    backdrop-filter:blur(10px);
+    position:sticky;
+    top:0;
+    box-shadow:0 4px 20px rgba(0,0,0,0.05);
+}
+
+.logo{
+    font-weight:600;
+    color:var(--teal);
+}
+
+.navbar a{
+    text-decoration:none;
+    color:var(--teal);
+    font-weight:500;
+}
+
+/* HERO */
+
+.hero{
+    text-align:center;
+    padding:70px 20px;
+    background:linear-gradient(to bottom,#fffaf7,#ffeef3);
+}
+
+.main-title{
+    font-family:'Dancing Script',cursive;
+    font-size:42px;
+    color:var(--teal);
+}
+
+.subtitle{
+    margin-top:10px;
+    opacity:.8;
+}
+
+/* CATEGORY CARDS */
+
+.categories{
+    width:90%;
+    max-width:900px;
+    margin:40px auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:var(--card);
+    padding:25px;
+    border-radius:18px;
+    text-align:center;
+    cursor:pointer;
+    box-shadow:0 8px 20px rgba(0,0,0,0.08);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 12px 28px rgba(0,0,0,0.12);
+}
+
+.icon{
+    font-size:30px;
+}
+
+.card h3{
+    margin-top:10px;
+}
+
+/* MESSAGE GRID */
+
+.message-grid{
+    width:90%;
+    max-width:800px;
+    margin:30px auto;
+    display:grid;
+    gap:20px;
+}
+
+.msg-item{
+    background:var(--card);
+    padding:20px;
+    border-radius:15px;
+    text-align:center;
+    box-shadow:0 8px 20px rgba(0,0,0,0.08);
+}
+
+/* SPECIAL BOX */
+
+.highlight-box{
+    text-align:center;
+    padding:60px 20px;
+}
+
+.cursive{
+    font-family:'Dancing Script',cursive;
+    font-size:34px;
+    color:var(--teal);
+}
+
+#daily-text{
+    margin:20px auto;
+    max-width:500px;
+    font-size:18px;
+}
+
+.btn-love{
+    padding:12px 25px;
+    border:none;
+    border-radius:30px;
+    background:linear-gradient(135deg,var(--accent),var(--teal));
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.btn-love:hover{
+    transform:scale(1.05);
+}
+
+/* HEART ANIMATION */
+
+.heart-fly{
+    position:fixed;
+    bottom:-20px;
+    font-size:22px;
+    animation:floatUp linear forwards;
+}
+
+@keyframes floatUp{
+    from{
+        transform:translateY(0);
+        opacity:1;
+    }
+    to{
+        transform:translateY(-100vh);
+        opacity:0;
+    }
+}
+
+/* FOOTER */
+
+.footer{
+    text-align:center;
+    padding:25px;
+    background:#fff;
+    margin-top:40px;
+}
