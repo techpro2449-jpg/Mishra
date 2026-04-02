@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Welcome ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background: linear-gradient(270deg,#ffd1dc,#ffe6e9,#fff0f5);
+    background-size:400% 400%;
+    animation:bgMove 8s ease infinite;
+}
+
+@keyframes bgMove{
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+.container{
+    text-align:center;
+    animation:fadeIn 1.2s ease;
+}
+
+@keyframes fadeIn{
+    from{opacity:0; transform:translateY(20px);} 
+    to{opacity:1; transform:translateY(0);} 
+}
+
+.title{
+    font-family:'Dancing Script',cursive;
+    font-size:44px;
+    color:#6b2d2d;
+}
+
+.heart{
+    display:inline-block;
+    animation:heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat{
+    0%,100%{transform:scale(1);} 
+    50%{transform:scale(1.2);} 
+}
+
+.subtitle{
+    color:#555;
+    margin-bottom:30px;
+}
+
+.circle{
+    width:200px;
+    height:200px;
+    background:#f5e6d3;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:0 auto 30px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.1);
+    animation:float 3s ease-in-out infinite;
+    overflow:hidden;
+}
+.circle-img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius:50%;
+}
+
+@keyframes float{
+    0%,100%{transform:translateY(0);} 
+    50%{transform:translateY(-10px);} 
+}
+
+.circle span{
+    font-size:60px;
+}
+
+.login-box{
+    background:rgba(255,255,255,0.6);
+    backdrop-filter: blur(12px);
+    padding:30px;
+    border-radius:20px;
+    width:320px;
+    margin:auto;
+    box-shadow:0 10px 30px rgba(0,0,0,0.15);
+}
+
+.input-box{
+    margin-bottom:20px;
+}
+
+.input-box input{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:10px;
+    outline:none;
+    background:#fff;
+    transition:0.3s;
+}
+
+.input-box input:focus{
+    box-shadow:0 0 10px rgba(255,77,109,0.5);
+}
+
+button{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:10px;
+    background:#ff4d6d;
+    color:#fff;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.3s;
+    position:relative;
+    overflow:hidden;
+}
+
+button:hover{
+    background:#ff1e4d;
+    transform:scale(1.05);
+}
+
+/* Ripple Effect */
+button::after{
+    content:"";
+    position:absolute;
+    width:0;
+    height:0;
+    background:rgba(255,255,255,0.4);
+    border-radius:50%;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    transition:0.5s;
+}
+
+button:active::after{
+    width:200px;
+    height:200px;
+}
+
+#error{
+    margin-top:10px;
+    color:red;
+    font-size:14px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="title">Welcome! <span class="heart">❤️</span></div>
+    <div class="subtitle">Sign in to enter your shared world</div>
+
+    <div class="circle">
+        <img src="lk.jpeg" alt="lock" class="circle-img">
+    </div>
+
+    <div class="login-box">
+
+        <div class="input-box">
+            <input type="text" id="username" placeholder="Username">
+        </div>
+
+        <div class="input-box">
+            <input type="password" id="password" placeholder="Password">
+        </div>
+
+        <button onclick="login()">Enter ❤️</button>
+
+        <div id="error"></div>
+
+    </div>
+
+</div>
+
+<script>
+function login(){
+    const user=document.getElementById("username").value;
+    const pass=document.getElementById("password").value;
+
+    if(user==="pravi" && pass==="0226"){
+        window.location.href="index.html";
+    }else{
+        document.getElementById("error").innerText="Wrong Username or Password 💔";
+    }
+}
+</script>
+
+</body>
+</html>
