@@ -1,178 +1,306 @@
-:root{
-    --cream:#fffaf7;
-    --card:#ffffff;
-    --text:#444;
-    --accent:#f7c6d0;
-    --teal:#d16a8a;
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-body{
-    font-family:'Poppins',sans-serif;
-    background:var(--cream);
-    color:var(--text);
+body {
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+    color: white;
 }
 
 /* NAVBAR */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 
-.navbar{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:15px 6%;
-    background:rgba(255,255,255,0.8);
-    backdrop-filter:blur(10px);
-    position:sticky;
-    top:0;
-    box-shadow:0 4px 20px rgba(0,0,0,0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 15px 6%;
+
+    /* Same theme as shayari */
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(10px);
+
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
 }
 
-.logo{
-    font-weight:600;
-    color:var(--teal);
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 15px 8%;
+
+    /* GLASS EFFECT */
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+
+    border-bottom: 1px solid rgba(255,255,255,0.2);
 }
 
-.navbar a{
-    text-decoration:none;
-    color:var(--teal);
-    font-weight:500;
+/* LOGO (make it look premium) */
+.logo {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.8rem;
+    color: white;
 }
 
-/* HERO */
+/* NAV LINKS */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
 
-.hero{
-    text-align:center;
-    padding:70px 20px;
-    background:linear-gradient(to bottom,#fffaf7,#ffeef3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 15px 8%;
+
+    /* CLEAN WHITE LOOK */
+    background: #ffffff;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+
+    border-bottom: 1px solid #f1f1f1;
 }
 
-.main-title{
-    font-family:'Dancing Script',cursive;
-    font-size:42px;
-    color:var(--teal);
+/* LOGO */
+.logo {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.9rem;
+
+    /* GRADIENT TEXT 🔥 */
+    background: linear-gradient(45deg, #ff4d6d, #ff8fab);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    font-weight: 600;
+}
+/* LINK */
+.navbar a {
+    text-decoration: none;
+    color: #ff6f91;
+    font-weight: 500;
+    position: relative;
 }
 
-.subtitle{
-    margin-top:10px;
-    opacity:.8;
+/* UNDERLINE EFFECT */
+.navbar a::after {
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: #ff6f91;
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    transition: 0.3s;
 }
 
-/* CATEGORY CARDS */
+.navbar a:hover::after {
+    width: 100%;
+}
+/* HOME BUTTON */
+.home-link {
+    text-decoration: none;
+    color: white;
+    font-size: 0.95rem;
 
-.categories{
-    width:90%;
-    max-width:900px;
-    margin:40px auto;
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-    gap:20px;
+    padding: 6px 16px;
+    border-radius: 20px;
+
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(10px);
+
+    transition: 0.3s;
 }
 
-.card{
-    background:var(--card);
-    padding:25px;
-    border-radius:18px;
-    text-align:center;
-    cursor:pointer;
-    box-shadow:0 8px 20px rgba(0,0,0,0.08);
-    transition:0.3s;
+/* HOVER */
+.home-link:hover {
+    background: linear-gradient(45deg, #ff758c, #ff7eb3);
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(255,118,140,0.5);
+}
+/* LOGO */
+.logo {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.8rem;
+    color: white;
 }
 
-.card:hover{
-    transform:translateY(-6px);
-    box-shadow:0 12px 28px rgba(0,0,0,0.12);
+/* HOME LINK */
+.home-link {
+    text-decoration: none;
+    color: white;
+    font-size: 0.95rem;
+    position: relative;
+    padding: 6px 14px;
+    border-radius: 20px;
+    transition: 0.3s;
 }
 
-.icon{
-    font-size:30px;
+/* HOVER EFFECT */
+.home-link:hover {
+    background: rgba(255,255,255,0.3);
+}
+/* 🌄 BACKGROUND IMAGE */
+.bg {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: url("sunset.png") center/cover no-repeat;
+    z-index: -2;
 }
 
-.card h3{
-    margin-top:10px;
+/* 🌈 OVERLAY */
+.bg::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        rgba(255,120,140,0.4),
+        rgba(0,0,0,0.6)
+    );
 }
 
-/* MESSAGE GRID */
-
-.message-grid{
-    width:90%;
-    max-width:800px;
-    margin:30px auto;
-    display:grid;
-    gap:20px;
+/* 💖 CONTAINER */
+.container {
+    text-align: center;
+    padding: 60px 20px;
 }
 
-.msg-item{
-    background:var(--card);
-    padding:20px;
-    border-radius:15px;
-    text-align:center;
-    box-shadow:0 8px 20px rgba(0,0,0,0.08);
+/* TITLE */
+h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3.5rem;
+    text-shadow: 0 5px 20px rgba(0,0,0,0.4);
 }
 
-/* SPECIAL BOX */
-
-.highlight-box{
-    text-align:center;
-    padding:60px 20px;
+/* SUBTITLE */
+.subtitle {
+    margin-top: 10px;
+    opacity: 0.9;
 }
 
-.cursive{
-    font-family:'Dancing Script',cursive;
-    font-size:34px;
-    color:var(--teal);
+/* BUTTON */
+/* ❤️ NEW BUTTON */
+.love-btn {
+    margin-top: 20px;
+    padding: 12px 28px;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(45deg, #ff4d6d, #ff8fab);
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-#daily-text{
-    margin:20px auto;
-    max-width:500px;
-    font-size:18px;
+.love-btn:hover {
+    transform: scale(1.1);
 }
 
-.btn-love{
-    padding:12px 25px;
-    border:none;
-    border-radius:30px;
-    background:linear-gradient(135deg,var(--accent),var(--teal));
-    color:white;
-    font-size:16px;
-    cursor:pointer;
-    transition:0.3s;
+/* 💖 POP HEARTS */
+.pop-heart {
+    position: fixed;
+    bottom: 0;
+    animation: rise 3s linear forwards;
 }
 
-.btn-love:hover{
-    transform:scale(1.05);
-}
-
-/* HEART ANIMATION */
-
-.heart-fly{
-    position:fixed;
-    bottom:-20px;
-    font-size:22px;
-    animation:floatUp linear forwards;
-}
-
-@keyframes floatUp{
-    from{
-        transform:translateY(0);
-        opacity:1;
+/* ✨ ANIMATION */
+@keyframes rise {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
     }
-    to{
-        transform:translateY(-100vh);
-        opacity:0;
+    100% {
+        transform: translateY(-100vh) scale(1.5);
+        opacity: 0;
     }
 }
 
-/* FOOTER */
+/* 🎴 CARDS */
+.cards {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    align-items: center;
+}
 
-.footer{
-    text-align:center;
-    padding:25px;
-    background:#fff;
-    margin-top:40px;
+/* CARD STYLE */
+.card {
+    width: 85%;
+    max-width: 420px;
+    padding: 16px 22px;
+    border-radius: 25px;
+
+    backdrop-filter: blur(15px);
+    background: rgba(255,255,255,0.18);
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.1rem;
+
+    text-decoration: none;
+    color: white;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+
+    transition: 0.35s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* ✨ Glow border effect */
+.card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 25px;
+    padding: 1px;
+    background: linear-gradient(45deg, #ff4d6d, #ff8fab);
+    -webkit-mask: 
+        linear-gradient(#000 0 0) content-box, 
+        linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+}
+
+/* HOVER */
+.card:hover {
+    transform: translateY(-8px) scale(1.04);
+    background: rgba(255,255,255,0.28);
+    box-shadow: 0 15px 40px rgba(255,118,140,0.4);
+}
+
+/* ✨ FLOATING HEARTS */
+.hearts::before {
+    content: "💖 💕 💗 💓 💞";
+    position: fixed;
+    width: 100%;
+    text-align: center;
+    bottom: -50px;
+    animation: floatHearts 10s linear infinite;
+    opacity: 0.4;
+    font-size: 1.5rem;
+}
+
+@keyframes floatHearts {
+    0% {transform: translateY(0);}
+    100% {transform: translateY(-100vh);}
 }
