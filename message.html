@@ -3,120 +3,92 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Messages | For My Love ❤️</title>
+<title>For You ❤️</title>
 
 <link rel="stylesheet" href="message.css">
-
 <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<!-- NAVBAR -->
+<!-- ✅ NAVBAR -->
 <nav class="navbar">
     <h2 class="logo">For Mishra ❤️</h2>
-    <a href="home.html">Home</a>
+
+    <ul class="nav-links">
+        <li><a href="home.html">Home</a></li>
+    </ul>
 </nav>
 
-<!-- HERO -->
-<header class="hero">
-    <h1 class="main-title">Messages For You 💌</h1>
-    <p class="subtitle">Every word is from my heart</p>
-</header>
+<!-- 🌸 BACKGROUND -->
+<div class="bg"></div>
 
-<!-- CATEGORY CARDS -->
-<section class="categories">
-    <div class="card" onclick="displayMessages('morning')">
-        <span class="icon">🌅</span>
-        <h3>Good Morning</h3>
-    </div>
+<!-- 💖 MAIN -->
+<div class="container">
 
-    <div class="card" onclick="displayMessages('night')">
-        <span class="icon">🌙</span>
-        <h3>Good Night</h3>
-    </div>
+    <h1>For You, Always ❤️</h1>
+    <p class="subtitle">Every word here belongs to you...</p>
 
-    <div class="card" onclick="displayMessages('love')">
-        <span class="icon">💕</span>
-        <h3>Love Messages</h3>
-    </div>
+    <!-- ✅ NEW BUTTON -->
+    <button class="love-btn" onclick="showLove()">Click Me ❤️</button>
 
-    <div class="card" onclick="displayMessages('miss')">
-        <span class="icon">🥺</span>
-        <h3>Miss You</h3>
-    </div>
-</section>
+    <!-- 🎴 CARDS -->
+<div class="cards">
 
-<!-- MESSAGE GRID -->
-<section id="message-grid" class="message-grid"></section>
+    <a href="morning.html" class="card">
+        🌅 <span>Good Morning</span>
+    </a>
 
-<!-- SPECIAL BOX -->
-<section class="highlight-box">
-    <h2 class="cursive">Today's Message</h2>
-    <p id="daily-text">"You're the peace in my chaotic world. I love you."</p>
-    <button class="btn-love" onclick="spawnHeart()">Send You Love ❤️</button>
-</section>
+    <a href="night.html" class="card">
+        🌙 <span>Good Night</span>
+    </a>
 
-<!-- FOOTER -->
-<footer class="footer">
-    <p>Made with ❤️ just for you</p>
-</footer>
+    <a href="heart.html" class="card">
+        💌 <span>From My Heart</span>
+    </a>
 
-<!-- SCRIPT -->
+    <a href="memories.html" class="card">
+        📸 <span>Memories</span>
+    </a>
+
+    <a href="love.html" class="card">
+        💖 <span>Why I Love You</span>
+    </a>
+
+    <a href="moments.html" class="card">
+        📅 <span>Our Moments</span>
+    </a>
+
+</div>
+
+    <!-- 💖 ANIMATION CONTAINER -->
+    <div id="love-animation"></div>
+
+</div>
+
+<!-- ✨ PARTICLES -->
+<div class="hearts"></div>
+
+<!-- ✅ SCRIPT -->
 <script>
-const messages = {
-    morning: [
-        { t: "Good morning beautiful! Hope your day is as amazing as you.", e: "☀️" },
-        { t: "The best part of my morning is thinking of you.", e: "☕" },
-        { t: "Sending you a virtual kiss to start your day!", e: "💋" }
-    ],
-    night: [
-        { t: "Sleep tight, my love. I'll be dreaming of you.", e: "🌙" },
-        { t: "Wish I was there to tuck you in. Goodnight!", e: "🧸" },
-        { t: "The stars are jealous of your glow tonight.", e: "✨" }
-    ],
-    love: [
-        { t: "I love you more than all the stars in the sky.", e: "♾️" },
-        { t: "You are my heart's favorite person.", e: "💖" },
-        { t: "Every love song reminds me of us.", e: "🎵" }
-    ],
-    miss: [
-        { t: "Missing your smile every single second.", e: "🥺" },
-        { t: "Counting down the moments until I see you again.", e: "⏳" },
-        { t: "My arms feel empty without you in them.", e: "🫂" }
-    ]
-};
+function showLove() {
+    const container = document.getElementById("love-animation");
 
-function displayMessages(category) {
-    const grid = document.getElementById('message-grid');
-    grid.innerHTML = '';
+    for (let i = 0; i < 20; i++) {
+        let heart = document.createElement("div");
+        heart.innerHTML = "💖";
+        heart.classList.add("pop-heart");
 
-    messages[category].forEach(msg => {
-        const div = document.createElement('div');
-        div.className = 'msg-item';
-        div.innerHTML = `<p>${msg.t} ${msg.e}</p>`;
-        grid.appendChild(div);
-    });
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.fontSize = (20 + Math.random() * 30) + "px";
 
-    grid.scrollIntoView({ behavior: 'smooth' });
+        container.appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove();
+        }, 3000);
+    }
 }
-
-function spawnHeart() {
-    const heart = document.createElement('div');
-    heart.className = 'heart-fly';
-    heart.innerHTML = '❤️';
-
-    heart.style.left = Math.random() * 100 + 'vw';
-    heart.style.animationDuration = (Math.random() * 2 + 3) + 's';
-
-    document.body.appendChild(heart);
-
-    setTimeout(() => {
-        heart.remove();
-    }, 5000);
-}
-
-setInterval(spawnHeart, 4000);
 </script>
 
 </body>
