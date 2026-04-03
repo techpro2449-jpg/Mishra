@@ -68,7 +68,8 @@ nav a:hover::after {
 
 /* MAIN SECTION */
 .moment-section {
-    height: 85vh;
+    min-height: 85vh;
+    padding: 40px 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -140,10 +141,10 @@ footer {
 
 .image-box img {
     width: 100%;
-    max-width: 350px;
+    max-width: 320px;
+    height: auto;
     border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-    transition: 0.4s;
+    object-fit: cover;
 }
 
 .image-box img:hover {
@@ -160,9 +161,22 @@ footer {
     .moment-container {
         flex-direction: column;
         text-align: center;
+        gap: 25px;
     }
 
     .content {
         text-align: center;
+    }
+
+    .content h1 {
+        font-size: 1.8rem;
+    }
+
+    .content p {
+        font-size: 0.95rem;
+    }
+
+    .image-box img {
+        max-width: 280px;
     }
 }
