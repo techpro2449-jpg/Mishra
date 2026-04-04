@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Good Night | Mishra ❤️</title>
+
+<link rel="stylesheet" href="Night.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+    <span class="close">&times;</span>
+    <img id="lightbox-img">
+</div>
+
+<!-- NAV -->
+<nav>
+    <h2 class="logo">For Mishra ❤️</h2>
+    <ul>
+        <li><a href="../home.html">Home</a></li>
+        <li>|</li>
+        <li><a href="../message.html">Message</a></li>
+    </ul>
+</nav>
+
+<!-- HEADER -->
+<section class="header">
+    <h1>Good Night 🌙</h1>
+    <p>Sleep peacefully... and dream a little of us 💫</p>
+</section>
+
+<!-- IMAGES -->
+<section class="gallery">
+
+    <div class="card"><img src="gm-gn/P_gn1.jpg"><p>Sweet Dreams 🌙</p></div>
+    <div class="card"><img src="gm-gn/P_gn2.jpg"><p>Sleep Tight 💫</p></div>
+    <div class="card"><img src="gm-gn/P_gn3.jpg"><p>Dream of Me 💖</p></div>
+    <div class="card"><img src="gm-gn/P_gn4.jpg"><p>Night Love 🌌</p></div>
+    <div class="card"><img src="gm-gn/P_gn5.jpg"><p>Peaceful Sleep 😴</p></div>
+    <div class="card"><img src="gm-gn/P_gn6.jpg"><p>See You in Dreams 💕</p></div>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>Sent with love every night ❤️</p>
+</footer>
+
+<!-- JS -->
+<script>
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+const closeBtn = document.querySelector(".lightbox .close");
+
+// OPEN LIGHTBOX
+document.querySelectorAll(".card img").forEach(img => {
+    img.addEventListener("click", (e) => {
+        e.stopPropagation();
+        lightbox.style.display = "flex";
+        lightboxImg.src = img.src;
+    });
+});
+
+// CLOSE BUTTON
+closeBtn.addEventListener("click", () => {
+    lightbox.style.display = "none";
+});
+
+// CLICK OUTSIDE IMAGE TO CLOSE
+lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) {
+        lightbox.style.display = "none";
+    }
+});
+
+// ESC KEY CLOSE
+document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+        lightbox.style.display = "none";
+    }
+});
+</script>
+
+</body>
+</html>
