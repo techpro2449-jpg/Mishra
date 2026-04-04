@@ -1,103 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For You ❤️</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For You ❤️</title>
 
-<link rel="stylesheet" href="message.css">
-<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="message.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<!-- ✅ NAVBAR -->
-<nav class="navbar">
-    <h2 class="logo">For Mishra ❤️</h2>
+<div class="animated-bg"></div>
 
-    <ul class="nav-links">
-        <li><a href="home.html">Home</a></li>
-    </ul>
+<nav class="glass-nav">
+    <div class="logo">Mishra<span>❤️</span></div>
+    <a href="home.html" class="home-link">Home</a>
 </nav>
 
-<!-- 🌸 BACKGROUND -->
-<div class="bg"></div>
+<main class="container">
+    <header class="hero">
+        <h1>Always <span>For You</span></h1>
+        <p>A digital sanctuary of our love and memories.</p>
+        <button class="main-cta" onclick="showLove()">CLICK HERE ❤️</button>
+    </header>
 
-<!-- 💖 MAIN -->
-<div class="container">
+    <section class="card-grid">
+        <div class="bento-grid">
 
-    <h1>For You, Always ❤️</h1>
-    <p class="subtitle">Every word here belongs to you...</p>
+            <a href="ms/love.html" class="card tall shadow-pink">
+                <div class="card-content">
+                    <span class="emoji">💖</span>
+                    <h3>Why I Love You</h3>
+                    <p>1000 reasons and counting...</p>
+                </div>
+            </a>
 
-    <!-- ✅ NEW BUTTON -->
-    <button class="love-btn" onclick="showLove()">Click Me ❤️</button>
+            <a href="ms/morning.html" class="card small">🌅 Morning</a>
+            <a href="ms/night.html" class="card small">🌙 Night</a>
 
-<!-- 🎴 CARDS -->
-<div class="cards">
+            <a href="ms/memories.html" class="card wide shadow-blue">
+                <div class="card-content">
+                    <span class="emoji">📸</span>
+                    <h3>Our Memories</h3>
+                    <p>A gallery of our best times together.</p>
+                </div>
+            </a>
 
-    <a href="ms/morning.html" class="card">
-        🌅 <span>Good Morning</span>
-    </a>
+            <a href="shayri.html" class="card medium">📜 Shayari</a>
+            <a href="doodles.html" class="card medium">🎨 Doodles</a>
+            <a href="ms/moments.html" class="card small">🎞️ Moments</a>
+            <a href="ms/heart.html" class="card small">💌 Heart</a>
 
-    <a href="ms/night.html" class="card">
-        🌙 <span>Good Night</span>
-    </a>
+        </div>
+    </section>
 
-    <a href="ms/memories.html" class="card">
-        📸 <span>Memories</span>
-    </a>
-
-    <a href="ms/moments.html" class="card">
-        🎞️ <span>Our Moments</span>
-    </a>
-
-    <a href="doodles.html" class="card">
-        🎨 <span>Our Doodles</span>
-    </a>
-
-    <a href="shayri.html" class="card">
-        📜 <span>Our Shayari</span>
-    </a>
-
-    <a href="ms/love.html" class="card">
-        💖 <span>Why I Love You</span>
-    </a>
-
-    <a href="ms/heart.html" class="card">
-        💌 <span>From My Heart</span>
-    </a>
-
-</div>
-
-    <!-- 💖 ANIMATION CONTAINER -->
     <div id="love-animation"></div>
+</main>
 
-</div>
-
-<!-- ✨ PARTICLES -->
-<div class="hearts"></div>
-
-<!-- ✅ SCRIPT -->
-<script>
-function showLove() {
-    const container = document.getElementById("love-animation");
-
-    for (let i = 0; i < 20; i++) {
-        let heart = document.createElement("div");
-        heart.innerHTML = "💖";
-        heart.classList.add("pop-heart");
-
-        heart.style.left = Math.random() * 100 + "vw";
-        heart.style.fontSize = (20 + Math.random() * 30) + "px";
-
-        container.appendChild(heart);
-
-        setTimeout(() => {
-            heart.remove();
-        }, 3000);
-    }
-}
-</script>
-
+<script src="message.js"></script>
 </body>
 </html>
