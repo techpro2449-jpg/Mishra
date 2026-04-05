@@ -71,20 +71,55 @@ nav a:hover::after {
 /* HEADER */
 .header{
     text-align:center;
-    padding:70px 20px 30px;
+    padding:80px 20px 40px;
     background: linear-gradient(to bottom, #fffaf7, #ffeef3);
+    position: relative;
+    overflow: hidden;
 }
 
 .header h1{
     font-family:'Playfair Display', serif;
-    font-size:2.5rem;
+    font-size:2.6rem;
     color: var(--teal);
+    letter-spacing: 1px;
 }
 
 .header p{
     margin:12px auto 25px;
+    font-size:1rem;
     max-width:500px;
-    opacity:0.8;
+    opacity:0.85;
+    line-height:1.6;
+}
+
+/* SOFT GLOW EFFECT */
+.header::before{
+    content:'';
+    position:absolute;
+    width:220px;
+    height:220px;
+    background: radial-gradient(circle, #ffdce6, transparent);
+    top:-60px;
+    left:10%;
+    filter: blur(45px);
+    z-index:0;
+}
+
+.header::after{
+    content:'';
+    position:absolute;
+    width:220px;
+    height:220px;
+    background: radial-gradient(circle, #ffeef3, transparent);
+    top:-60px;
+    right:10%;
+    filter: blur(45px);
+    z-index:0;
+}
+
+.header *{
+    position: relative;
+    z-index: 1;
 }
 
 /* TABS */
