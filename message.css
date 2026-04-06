@@ -16,6 +16,7 @@ body {
     background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb, #a18cd1);
     background-size: 400% 400%;
     animation: gradientBG 12s ease infinite;
+    overflow-x: hidden;
 }
 
 /* Background */
@@ -79,7 +80,7 @@ body {
     color: var(--primary);
 }
 
-/* CTA */
+/* CTA Button */
 .main-cta {
     margin-top: 2rem;
     padding: 12px 30px;
@@ -89,7 +90,7 @@ body {
     cursor: pointer;
 
     background: linear-gradient(45deg, #ff4d6d, #ff758c);
-    box-shadow: 0 4px 15px rgba(255, 77, 109, 0.3);
+    box-shadow: 0 4px 20px rgba(255, 77, 109, 0.4);
 
     transition: all 0.4s ease;
     position: relative;
@@ -97,34 +98,23 @@ body {
 }
 
 .main-cta:hover {
-    transform: translateY(-4px) scale(1.07);
+    transform: translateY(-5px) scale(1.08);
 }
 
-.main-cta::after {
-    content: '';
-    position: absolute;
-    inset: -50%;
-    background: radial-gradient(circle, rgba(255,255,255,0.3), transparent 70%);
-    transform: scale(0);
-    transition: 0.5s;
+.main-cta:active {
+    transform: scale(0.95);
 }
 
-.main-cta:active::after {
-    transform: scale(1);
-}
-
-/* 💖 BENTO GRID (FIXED FOR PC) */
+/* 💖 Bento Grid */
 .bento-grid {
     display: grid;
-
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    grid-auto-rows: 190px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-auto-rows: 180px;
 
     gap: 25px;
     padding: 50px 10%;
-
-    max-width: 1400px;
-    margin: auto;
+    max-width: 1300px;
+    margin: 0 auto;
 }
 
 /* Cards */
@@ -150,7 +140,7 @@ body {
     transition: all 0.4s ease;
 }
 
-/* Glow effect */
+/* Glow sweep */
 .card::before {
     content: "";
     position: absolute;
@@ -185,7 +175,7 @@ body {
     transform: scale(1.3) rotate(10deg);
 }
 
-/* Special cards */
+/* Special glow */
 .shadow-pink:hover {
     box-shadow: 0 0 30px rgba(255, 77, 109, 0.7);
 }
@@ -194,13 +184,13 @@ body {
     box-shadow: 0 0 30px rgba(116, 185, 255, 0.7);
 }
 
-/* Grid sizes (FIXED) */
+/* Grid sizes */
 .small { grid-column: span 1; }
 .medium { grid-column: span 2; }
 .wide { grid-column: span 2; }
 .tall { grid-row: span 2; }
 
-/* 💻 DESKTOP OPTIMIZATION */
+/* Desktop */
 @media (min-width: 1200px) {
     .bento-grid {
         grid-template-columns: repeat(4, 1fr);
@@ -208,7 +198,7 @@ body {
     }
 }
 
-/* 📱 MOBILE FIX */
+/* Mobile */
 @media (max-width: 768px) {
     .bento-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -221,6 +211,38 @@ body {
         grid-column: span 2;
         grid-row: span 1;
     }
+}
+
+/* 💌 POPUP MESSAGE (FIXED) */
+.mystery-msg {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+
+    background: rgba(255, 255, 255, 0.95);
+    color: var(--primary);
+
+    padding: 20px 30px;
+    border-radius: 20px;
+
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-align: center;
+
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+
+    z-index: 99999;
+    opacity: 0;
+
+    animation: popupLove 0.5s ease forwards;
+}
+
+/* Floating hearts/petals */
+.floating-mystery {
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
 }
 
 /* Footer */
@@ -245,4 +267,11 @@ body {
     0% { background-position: 0% }
     50% { background-position: 100% }
     100% { background-position: 0% }
+}
+
+@keyframes popupLove {
+    to {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
 }
