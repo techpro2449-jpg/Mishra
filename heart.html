@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Basic Meta Setup -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heart Sync - Ultimate</title>
+
+  <!-- Tailwind CSS for styling -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="heart.css">
+</head>
+
+<body class="flex flex-col items-center px-4 py-6 md:py-10">
+
+<!-- ================= NAVBAR ================= -->
+<nav class="nav">
+  <div class="nav-container">
+
+    <!-- Logo / Title -->
+    <h2 class="logo">For Mishra ❤️</h2>
+
+    <!-- Navigation Links -->
+    <ul class="nav-links">
+      <!-- FIX: extra " removed -->
+      <li><a href="../home.html" class="nav-link">Home</a></li>
+    </ul>
+
+  </div>
+</nav>
+
+<!-- ================= MAIN CONTENT ================= -->
+<main class="w-full container-main">
+
+  <!-- Title Section -->
+  <div class="text-center mb-10">
+    <h1 class="serif text-3xl md:text-4xl mb-6">Heart Sync</h1>
+
+    <!-- Heart Button -->
+    <div class="relative flex justify-center py-10">
+      <!-- This heart is clickable (controlled by JS) -->
+      <div id="heart" class="text-6xl md:text-7xl heart-main cursor-pointer select-none">🩷</div>
+    </div>
+
+    <!-- 👇 ADD HERE -->
+<p class="mt-6 mb-2 text-sm opacity-70 italic text-center">
+  Long press my heart if you’re with me 💗
+</p>
+
+    <!-- Status -->
+<div class="text-center mb-6">
+  <p class="text-xs opacity-60 uppercase">
+    Sync Status:
+    <span id="status" class="text-pink-400 font-bold">Harmonious</span>
+  </p>
+</div>
+
+<!-- ================= STATS GRID ================= -->
+<div class="grid stats-grid gap-4 mb-6">
+
+  <!-- Heart Rate Card -->
+ <div class="glass rounded-3xl p-5 h-40 flex flex-col items-center justify-center text-center">
+  <p class="text-xs opacity-60 mb-2">Heart Rate</p>
+  <div class="flex items-center gap-1 justify-center">
+    <span id="bpm" class="text-3xl">74</span>
+    <span>BPM</span>
+  </div>
+</div>
+
+  <!-- Love Level Card -->
+  <div class="glass rounded-3xl p-5 flex flex-col items-center justify-center h-40">
+    <p class="text-xs opacity-60">Love Level</p>
+
+    <div class="relative w-20 h-20">
+      <svg class="-rotate-90 w-full h-full">
+
+        <circle cx="40" cy="40" r="34"
+          stroke="rgba(255,255,255,0.05)"
+          stroke-width="4"
+          fill="none"/>
+
+        <circle id="loveCircle"
+          cx="40" cy="40" r="34"
+          stroke="#ec4899"
+          stroke-width="5"
+          fill="none"
+          stroke-dasharray="213"
+          stroke-dashoffset="0"
+          stroke-linecap="round"/>
+      </svg>
+
+      <span id="loveValue"
+        class="absolute inset-0 flex items-center justify-center">
+        60%
+      </span>
+    </div>
+  </div>
+
+  <!-- Distance Card -->
+  <div class="glass rounded-3xl p-5 distance-card">
+    <p class="text-xs opacity-60">Distance</p>
+    <p class="text-lg">314 km away</p>
+  </div>
+
+</div>
+
+<!-- Romantic Message -->
+<div class="glass rounded-3xl p-6 text-center">
+  <p class="serif italic">
+    You are the most beautiful part of my story...<br>
+    Every chapter feels incomplete without you.
+  </p>
+</div>
+
+</main>
+
+<!-- ================= JAVASCRIPT ================= -->
+<script src="heart.js"></script>
+
+</body>
+</html>
