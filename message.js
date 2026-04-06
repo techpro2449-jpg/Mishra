@@ -22,71 +22,97 @@ document.addEventListener('mousemove', (e) => {
         heart.style.transform = `translateY(-80px) rotate(${Math.random() * 360}deg) scale(0)`;
         heart.style.opacity = '0';
     }, 50);
+
     setTimeout(() => heart.remove(), 1000);
 });
 
-// --- 2. THE MYSTERY CLICK LOGIC ---
+
+// --- 2. LOVE MESSAGES ---
 const romanticMessages = [
-    "You are my favorite thought. ❤️",
-    "Every day with you is a gift.",
-    "You've made my world so much brighter, Mishra.",
-    "I'm so lucky to have you. ✨",
-    "My heart is, and always will be, yours.",
-    "You are the reason behind my smile every day. 😊",
-    "In your eyes, I found my forever. 💫"
+    "You are my favorite thought.\n❤️",
+    "Every day with you\nis a gift.",
+    "You've made my world so much brighter,\nMishra.",
+    "I'm so lucky\nto have you. ✨",
+    "My heart is,\nand always will be, yours.",
+    "You are the reason behind\nmy smile every day. 😊",
+    "In your eyes,\nI found my forever. 💫"
 ];
 
+
+// --- 3. MAIN CLICK FUNCTION ---
 function showLove() {
-    // Pick a random mystery number 1-4
-    const mystery = Math.floor(Math.random() * 4) + 1;
     const container = document.getElementById('love-animation');
-if (!container) return;
-    
+    if (!container) return;
+
+    // 🔥 Better randomness (message more frequent)
+    const mystery = Math.floor(Math.random() * 3) + 1;
+
+    // 💖 ALWAYS show message also (fix)
+    showMessage();
+
     if (mystery === 1) {
-        // EFFECT: Heart Rain
-        for (let i = 0; i < 30; i++) {
+        // Heart Rain
+        for (let i = 0; i < 25; i++) {
             createFloatingElement('💖', container);
         }
     } 
     else if (mystery === 2) {
-        // EFFECT: Floating Message
-        const msg = document.createElement('div');
-        msg.className = 'mystery-msg';
-        msg.innerText = romanticMessages[Math.floor(Math.random() * romanticMessages.length)];
-        document.body.appendChild(msg);
-        setTimeout(() => msg.remove(), 3000);
-    } 
-    else if (mystery === 3) {
-        // EFFECT: Screen Flash & Petals
-        document.body.style.filter = "brightness(1.2)";
-        setTimeout(() => document.body.style.filter = "brightness(1)", 200);
-        for (let i = 0; i < 40; i++) {
+        // Petals
+        for (let i = 0; i < 30; i++) {
             createFloatingElement('🌸', container);
         }
     }
     else {
-        // EFFECT: Zoom & Pulse
+        // Pulse effect
         const cta = document.querySelector('.main-cta');
-       cta.style.transform = "scale(2)";
-        cta.style.opacity = "0";
-        setTimeout(() => {
-            cta.style.transform = "scale(1)";
-            cta.style.opacity = "1";
-            createFloatingElement('💘', container);
-        }, 500);
+        if (cta) {
+            cta.style.transform = "scale(1.3)";
+            setTimeout(() => {
+                cta.style.transform = "scale(1)";
+            }, 300);
+        }
+        createFloatingElement('💘', container);
     }
 }
 
+
+// --- 4. MESSAGE FUNCTION (FIXED) ---
+function showMessage() {
+    const msg = document.createElement('div');
+    msg.className = 'mystery-msg';
+
+    msg.innerText = romanticMessages[
+        Math.floor(Math.random() * romanticMessages.length)
+    ];
+
+    document.body.appendChild(msg);
+
+    // Smooth fade out
+    setTimeout(() => {
+        msg.style.opacity = "0";
+        msg.style.transform = "translate(-50%, -50%) scale(0.8)";
+    }, 2500);
+
+    setTimeout(() => msg.remove(), 3200);
+}
+
+
+// --- 5. FLOATING ELEMENT ---
 function createFloatingElement(emoji, container) {
     const el = document.createElement('div');
     el.innerHTML = emoji;
-    el.className = 'floating-mystery';
+
+    el.style.position = "fixed";
     el.style.left = Math.random() * 100 + 'vw';
     el.style.top = '110vh';
     el.style.fontSize = (Math.random() * 30 + 20) + 'px';
+    el.style.pointerEvents = "none";
+    el.style.zIndex = "9999";
+
     container.appendChild(el);
 
     const duration = Math.random() * 3 + 2;
+
     el.animate([
         { transform: 'translateY(0) rotate(0deg)', opacity: 1 },
         { transform: `translateY(-120vh) rotate(${Math.random() * 360}deg)`, opacity: 0 }
