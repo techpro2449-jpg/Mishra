@@ -12,48 +12,46 @@
 }
 
 body {
-    margin: 0;
     font-family: 'Poppins', sans-serif;
     background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb, #a18cd1);
     background-size: 400% 400%;
     animation: gradientBG 12s ease infinite;
 }
 
-/* Dynamic Soft Background */
+/* Background */
 .animated-bg {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    inset: 0;
     z-index: -1;
-    background: radial-gradient(circle at 50% 50%, rgba(255, 77, 109, 0.05) 0%, transparent 50%);
+    background: radial-gradient(circle at center, rgba(255, 77, 109, 0.05), transparent 60%);
 }
 
-/* Glass Navbar */
+/* Navbar */
 .glass-nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 8px 40px rgba(255, 77, 109, 0.2);
-    padding: 1.5rem 10%;
-    backdrop-filter: blur(10px);
-    background: rgba(255, 255, 255, 0.4);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 16px 10%;
     position: sticky;
     top: 0;
     z-index: 1000;
+
+    background: rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(18px);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
 }
 
 .logo {
     font-family: 'Dancing Script', cursive;
-    font-size: 1.8rem;
-    font-weight: bold;
+    font-size: 2rem;
+    color: var(--primary);
 }
 
 .home-link {
     text-decoration: none;
-    color: #ff4d6d;
+    color: var(--primary);
     font-weight: 600;
     padding: 6px 14px;
     border-radius: 20px;
@@ -61,10 +59,11 @@ body {
 }
 
 .home-link:hover {
-    background: #ff4d6d;
+    background: var(--primary);
     color: #fff;
 }
-/* Hero Section */
+
+/* Hero */
 .hero {
     text-align: center;
     padding: 4rem 1rem 2rem;
@@ -72,189 +71,86 @@ body {
 
 .hero h1 {
     font-size: 3rem;
-    margin-bottom: 0.5rem;
-    color: #2d3436;
-    text-shadow: 0 2px 10px rgba(255,255,255,0.5);
+    color: var(--text);
 }
 
-.hero h1 span {
+.hero span {
     font-family: 'Dancing Script', cursive;
     color: var(--primary);
 }
 
+/* CTA */
 .main-cta {
     margin-top: 2rem;
     padding: 12px 30px;
     border: none;
-    background: var(--primary);
-    color: white;
     border-radius: 50px;
-    font-weight: 600;
+    color: #fff;
     cursor: pointer;
+
+    background: linear-gradient(45deg, #ff4d6d, #ff758c);
     box-shadow: 0 4px 15px rgba(255, 77, 109, 0.3);
-    transition: transform 0.3s ease;
-}
-
-.main-cta:hover {
-    transform: translateY(-3px) scale(1.05);
-}
-
-/* Neet Card Grid */
-.card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
-    padding: 2rem 10%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.glass-card {
-    background: var(--glass);
-    backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    padding: 2rem;
-    border-radius: 24px;
-    text-decoration: none;
-    color: var(--text);
-    text-align: center;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.glass-card:hover {
-    transform: translateY(-10px);
-    background: rgba(255, 255, 255, 0.6);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
-}
-
-.glass-card .icon {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-}
-
-.glass-card h3 {
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
-    color: #2d3436;
-    font-weight: 600;
-}
-
-.glass-card p {
-    color: rgba(0,0,0,0.7);
-    font-size: 0.85rem;
-    opacity: 0.7;
-}
-
-/* Special Highlighting */
-.highlight {
-    background: rgba(255, 77, 109, 0.1);
-    border: 1px solid rgba(255, 77, 109, 0.2);
-}
-
-
-/* Grid Layout */
-.small { grid-column: span 1; font-weight: 600; color: #2d3436;}
-.medium { grid-column: span 1; font-weight: 600; color: #2d3436; }
-.wide { grid-column: span 2; }
-.tall { grid-row: span 2; }
-
-.love-footer {
-    text-align: center;
-    padding: 30px 15px;
-    margin-top: 40px;
-
-    background: rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur(12px);
-    border-top: 1px solid rgba(255,255,255,0.4);
-
-    color: #fff;
-    font-family: 'Poppins', sans-serif;
-}
-
-.footer-text {
-    font-size: 1rem;
-    line-height: 1.6;
-}
-
-.footer-text span {
-    font-family: 'Dancing Script', cursive;
-    font-size: 1.4rem;
-    color: #ff4d6d;
-    text-shadow: 0 2px 10px rgba(255, 77, 109, 0.5);
-}
-
-.footer-text small {
-    font-size: 0.85rem;
-    opacity: 0.8;
-}
-/* Animated gradient */
-@keyframes gradientBG {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-/* 🌟 Glass Navbar */
-.glass-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 10%;
-
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-
-    background: rgba(255, 255, 255, 0.35);
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
-
-    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
-
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-}
-
-.logo {
-    font-family: 'Dancing Script', cursive;
-    font-size: 2rem;
-    color: #ff4d6d;
-    text-shadow: 0 2px 10px rgba(255, 77, 109, 0.4);
-}
-
-
-/* 💖 Bento Grid */
-.bento-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-auto-rows: 150px;
-    gap: 20px;
-    padding: 40px 10%;
-}
-
-/* 💎 Cards */
-.card {
-    background: rgba(255, 255, 255, 0.25);
-    backdrop-filter: blur(15px);
-    border-radius: 25px;
-    border: 1px solid rgba(255,255,255,0.3);
-    color: #fff;
-    text-align: center;
-    text-decoration: none;
-     text-shadow: 0 2px 8px rgba(0,0,0,0.2);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
 
     transition: all 0.4s ease;
     position: relative;
     overflow: hidden;
 }
 
-/* ✨ Glow overlay */
+.main-cta:hover {
+    transform: translateY(-4px) scale(1.07);
+}
+
+.main-cta::after {
+    content: '';
+    position: absolute;
+    inset: -50%;
+    background: radial-gradient(circle, rgba(255,255,255,0.3), transparent 70%);
+    transform: scale(0);
+    transition: 0.5s;
+}
+
+.main-cta:active::after {
+    transform: scale(1);
+}
+
+/* 💖 BENTO GRID (FIXED FOR PC) */
+.bento-grid {
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-auto-rows: 190px;
+
+    gap: 25px;
+    padding: 50px 10%;
+
+    max-width: 1400px;
+    margin: auto;
+}
+
+/* Cards */
+.card {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(15px);
+
+    border-radius: 25px;
+    border: 1px solid rgba(255,255,255,0.3);
+
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    position: relative;
+    overflow: hidden;
+
+    transition: all 0.4s ease;
+}
+
+/* Glow effect */
 .card::before {
     content: "";
     position: absolute;
@@ -272,132 +168,81 @@ body {
     left: 100%;
 }
 
-/* 🌸 Hover effect */
+/* Hover */
 .card:hover {
-    transform: translateY(-10px) scale(1.05);
-    background: rgba(255, 255, 255, 0.35);
-    box-shadow: 0 20px 50px rgba(255, 105, 180, 0.3);
+    transform: translateY(-12px) scale(1.06);
+    box-shadow: 0 25px 60px rgba(255, 105, 180, 0.35);
 }
 
-/* 💕 Emoji */
+/* Emoji */
 .emoji {
     font-size: 2.5rem;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
     transition: 0.3s;
 }
 
 .card:hover .emoji {
-    transform: scale(1.3) rotate(8deg);
+    transform: scale(1.3) rotate(10deg);
 }
 
-/* 🌈 Special glow cards */
+/* Special cards */
 .shadow-pink:hover {
-    box-shadow: 0 0 30px rgba(255, 77, 109, 0.6);
+    box-shadow: 0 0 30px rgba(255, 77, 109, 0.7);
 }
 
 .shadow-blue:hover {
-    box-shadow: 0 0 30px rgba(116, 185, 255, 0.6);
+    box-shadow: 0 0 30px rgba(116, 185, 255, 0.7);
 }
 
-/* 📐 Grid sizes */
+/* Grid sizes (FIXED) */
 .small { grid-column: span 1; }
-.medium { grid-column: span 1; }
+.medium { grid-column: span 2; }
 .wide { grid-column: span 2; }
 .tall { grid-row: span 2; }
 
-/* 📱 Mobile */
-@media (max-width: 900px) {
+/* 💻 DESKTOP OPTIMIZATION */
+@media (min-width: 1200px) {
+    .bento-grid {
+        grid-template-columns: repeat(4, 1fr);
+        grid-auto-rows: 210px;
+    }
+}
+
+/* 📱 MOBILE FIX */
+@media (max-width: 768px) {
     .bento-grid {
         grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 150px;
     }
 
-    .wide, .tall {
+    .wide,
+    .medium,
+    .tall {
         grid-column: span 2;
         grid-row: span 1;
     }
 }
 
+/* Footer */
+.love-footer {
+    text-align: center;
+    padding: 30px;
+    margin-top: 40px;
 
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(12px);
 
-.card:hover .emoji {
-    transform: scale(1.2) rotate(10deg);
+    color: #fff;
 }
 
-/* Glow */
-
-
-.shadow-blue:hover {
-    border-color: #74b9ff;
-    box-shadow: 0 0 20px rgba(116, 185, 255, 0.3);
-}
-
-/* Mobile */
-@media (max-width: 900px) {
-    .bento-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .wide, .tall {
-        grid-column: span 2;
-        grid-row: span 1;
-    }
-}
-
-/* Mystery Message Popup */
-.mystery-msg {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: rgba(255, 255, 255, 0.9);
-    padding: 20px 40px;
-    border-radius: 50px;
-    color: #ff4d6d;
+.footer-text span {
     font-family: 'Dancing Script', cursive;
-    font-size: 2rem;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    z-index: 10000;
-    animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards,
-               fadeOut 0.5s 2.5s forwards;
-    white-space: nowrap;
+    color: var(--primary);
 }
 
-@keyframes popIn {
-    0% { transform: translate(-50%, -50%) scale(0); }
-    100% { transform: translate(-50%, -50%) scale(1); }
-}
-
-@keyframes fadeOut {
-    100% { opacity: 0; }
-}
-
-/* Floating Elements (Hearts/Petals) */
-.floating-mystery {
-    position: fixed;
-    pointer-events: none;
-    z-index: 9998;
-}
-
-/* Make the CTA button look more "Mysterious" */
-.main-cta {
-    background: linear-gradient(45deg, #ff4d6d, #ff758c);
-    border: 2px solid rgba(255,255,255,0.5);
-    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
-    letter-spacing: 2px;
-    position: relative;
-    overflow: hidden;
-}
-
-.main-cta::after {
-    content: '';
-    position: absolute;
-    top: -50%; left: -50%;
-    width: 200%; height: 200%;
-    background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
-    transform: scale(0);
-    transition: 0.5s;
-}
-
-.main-cta:active::after {
-    transform: scale(1);
+/* Animations */
+@keyframes gradientBG {
+    0% { background-position: 0% }
+    50% { background-position: 100% }
+    100% { background-position: 0% }
 }
