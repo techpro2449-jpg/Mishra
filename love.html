@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Beloved | 100 Reasons</title>
+
+<link rel="stylesheet" href="love.html">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="bg-hearts" id="hearts-bg"></div>
+
+<div class="side-nav" id="sideNav"></div>
+
+<nav>
+    <div class="logo">For Mishra ❤️</div>
+
+    <div class="nav-links">
+        <a href="home.html">Home</a>
+    </div>
+</nav>
+
+<main>
+<section class="hero">
+    <h1>100 Reasons Why</h1>
+    <p>A collection of moments that make me love you more every day.</p>
+</section>
+
+<div id="reasons-grid" class="reasons-grid"></div>
+</main>
+<script>
+/* ================================
+   💖 STEP 1: CORE DATA
+================================ */
+
+const reasons = [
+{id:1,title:"Your Smile",desc:"Your smile fixes everything without even trying."},
+{id:2,title:"Your Eyes",desc:"I see my entire world reflected in your eyes."},
+{id:3,title:"Your Laugh",desc:"Your laugh is my favorite melody."},
+{id:4,title:"Your Voice",desc:"Your voice feels like peace in human form."},
+{id:5,title:"Your Presence",desc:"Everything feels right when you’re near."},
+
+{id:6,title:"Your Kindness",desc:"You treat people with a softness this world needs."},
+{id:7,title:"Your Heart",desc:"You have the purest heart I’ve ever known."},
+{id:8,title:"Your Mind",desc:"The way you think fascinates me."},
+{id:9,title:"Your Energy",desc:"You bring life into every moment."},
+{id:10,title:"Your Aura",desc:"There’s a calm glow around you."},
+
+{id:11,title:"Your Care",desc:"You care in ways that words can’t explain."},
+{id:12,title:"Your Support",desc:"You stand beside me no matter what."},
+{id:13,title:"Your Loyalty",desc:"You never give up on us."},
+{id:14,title:"Your Trust",desc:"The trust you give me is priceless."},
+{id:15,title:"Your Honesty",desc:"You keep everything real and pure."},
+
+{id:16,title:"Your Patience",desc:"You handle everything with so much calm."},
+{id:17,title:"Your Strength",desc:"You’re stronger than you even know."},
+{id:18,title:"Your Softness",desc:"Your softness heals my rough days."},
+{id:19,title:"Your Warmth",desc:"You make everything feel safe."},
+{id:20,title:"Your Comfort",desc:"You are my safe place."},
+
+{id:21,title:"Your Positivity",desc:"You find light even in darkness."},
+{id:22,title:"Your Dreams",desc:"Your dreams inspire me."},
+{id:23,title:"Your Goals",desc:"Your ambition motivates me."},
+{id:24,title:"Your Growth",desc:"You never stop becoming better."},
+{id:25,title:"Your Confidence",desc:"You shine without trying."},
+
+{id:26,title:"Your Style",desc:"You carry yourself effortlessly."},
+{id:27,title:"Your Expressions",desc:"Your face tells stories without words."},
+{id:28,title:"Your Reactions",desc:"Your reactions are priceless."},
+{id:29,title:"Your Emotions",desc:"You feel deeply and beautifully."},
+{id:30,title:"Your Love",desc:"The way you love is rare."},
+
+{id:31,title:"Your Hugs",desc:"Your hugs feel like home."},
+{id:32,title:"Your Texts",desc:"Your messages brighten my day."},
+{id:33,title:"Your Calls",desc:"Hearing you is everything."},
+{id:34,title:"Your Voice Notes",desc:"I replay them just to feel close."},
+{id:35,title:"Your Good Mornings",desc:"You make mornings worth waking up for."},
+
+{id:36,title:"Your Good Nights",desc:"You bring peace to my nights."},
+{id:37,title:"Your Surprises",desc:"You make life exciting."},
+{id:38,title:"Your Efforts",desc:"Even your smallest effort matters."},
+{id:39,title:"Your Attention",desc:"You make me feel seen."},
+{id:40,title:"Your Time",desc:"Time with you is priceless."},
+
+{id:41,title:"Your Understanding",desc:"You understand me without words."},
+{id:42,title:"Your Listening",desc:"You listen with your heart."},
+{id:43,title:"Your Advice",desc:"Your words guide me."},
+{id:44,title:"Your Calmness",desc:"You quiet my chaos."},
+{id:45,title:"Your Balance",desc:"You keep everything grounded."},
+
+{id:46,title:"Your Excitement",desc:"You make everything fun."},
+{id:47,title:"Your Curiosity",desc:"You love discovering new things."},
+{id:48,title:"Your Playfulness",desc:"Your playful side is my favorite."},
+{id:49,title:"Your Humor",desc:"You make me laugh endlessly."},
+{id:50,title:"Your Vibe",desc:"Your vibe matches mine perfectly."},
+
+{id:51,title:"Our Talks",desc:"Talking to you never gets boring."},
+{id:52,title:"Our Late Nights",desc:"Late nights with you are special."},
+{id:53,title:"Our Calls",desc:"Time disappears when we talk."},
+{id:54,title:"Our Messages",desc:"Our chats are my favorite place."},
+{id:55,title:"Our Jokes",desc:"We laugh at things only we understand."},
+
+{id:56,title:"Our Memories",desc:"Every memory with you is gold."},
+{id:57,title:"Our Moments",desc:"Even small moments feel big."},
+{id:58,title:"Our Bond",desc:"What we have is rare."},
+{id:59,title:"Our Connection",desc:"We connect beyond words."},
+{id:60,title:"Our Chemistry",desc:"Everything feels natural with you."},
+
+{id:61,title:"Our Understanding",desc:"We understand each other deeply."},
+{id:62,title:"Our Trust",desc:"Our trust is unbreakable."},
+{id:63,title:"Our Support",desc:"We lift each other up."},
+{id:64,title:"Our Story",desc:"Our story is my favorite."},
+{id:65,title:"Our Future",desc:"I see you in my future."},
+
+{id:66,title:"Our Dreams",desc:"Dreaming with you feels real."},
+{id:67,title:"Our Growth",desc:"We grow together."},
+{id:68,title:"Our Time",desc:"Time with you is never wasted."},
+{id:69,title:"Our Happiness",desc:"You are my happiness."},
+{id:70,title:"Our Peace",desc:"You are my calm."},
+
+{id:71,title:"How You Make Me Feel",desc:"You make me feel loved."},
+{id:72,title:"How You Make Me Smile",desc:"You bring real smiles."},
+{id:73,title:"How You Make Me Laugh",desc:"You make life lighter."},
+{id:74,title:"How You Make Me Calm",desc:"You ease my mind."},
+{id:75,title:"How You Make Me Better",desc:"You improve me."},
+
+{id:76,title:"How You Inspire Me",desc:"You inspire me daily."},
+{id:77,title:"How You Motivate Me",desc:"You push me forward."},
+{id:78,title:"How You Support Me",desc:"You believe in me."},
+{id:79,title:"How You Understand Me",desc:"You know the real me."},
+{id:80,title:"How You Accept Me",desc:"You accept all of me."},
+
+{id:81,title:"Your Impact",desc:"You changed my life."},
+{id:82,title:"Your Importance",desc:"You mean everything."},
+{id:83,title:"Your Place",desc:"You live in my heart."},
+{id:84,title:"Your Uniqueness",desc:"You are one of a kind."},
+{id:85,title:"Your Perfection",desc:"You’re perfect to me."},
+
+{id:86,title:"Your Imperfections",desc:"Even your flaws are beautiful."},
+{id:87,title:"Your Magic",desc:"There’s something magical about you."},
+{id:88,title:"Your Presence Again",desc:"Because one reason isn’t enough."},
+{id:89,title:"Your Everything",desc:"You are everything I want."},
+{id:90,title:"Just You",desc:"I love you for being you."},
+
+{id:91,title:"Your Smile Again",desc:"Because your smile deserves more love."},
+{id:92,title:"Your Laugh Again",desc:"I could listen to it forever."},
+{id:93,title:"Your Eyes Again",desc:"They still mesmerize me."},
+{id:94,title:"Your Voice Again",desc:"Still my comfort."},
+{id:95,title:"Your Love Again",desc:"Still my favorite feeling."},
+
+{id:96,title:"You & Me",desc:"Together feels right."},
+{id:97,title:"Us Forever",desc:"I want this forever."},
+{id:98,title:"Our Journey",desc:"I love every step with you."},
+{id:99,title:"My Heart",desc:"It beats for you."},
+{id:100,title:"Always You ❤️",desc:"At the end, it’s always you."}
+];
+
+/* ================================
+   💖 IMAGE SYSTEM
+================================ */
+const imagePool = [
+    "img/Butterfly Garden.png",
+    "img/Cozy Library.png",
+    "img/Firefly Night.png",
+    "img/First Meet.png",
+    "img/Flower Field.png",
+    "img/Forest Hug.png",
+    "img/Forever Together.png",
+    "img/Lake Reflection.png",
+    "img/Morning Dew.png",
+    "img/Night Campfire.png",
+    "img/Rainy Umbrella Scene.png",
+    "img/Sharing Food.png",
+    "img/Shooting Star Wish.png",
+    "img/Sleeping Together.png",
+    "img/Sunset Hill.png",
+    "img/Swing Moment.png",
+    "img/Tiny Bridge.png",
+    "img/Walking Together.png",
+    "img/Windy Cliff.png",
+    "img/Winter Warmth.png"
+];
+
+function generateShuffledImages() {
+
+    let expanded = [];
+
+    imagePool.forEach(img => {
+        for (let i = 0; i < 20; i++) {
+            expanded.push(img);
+        }
+    });
+
+    // Fisher-Yates Shuffle
+    for (let i = expanded.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [expanded[i], expanded[j]] = [expanded[j], expanded[i]];
+    }
+
+    return expanded;
+}
+
+const shuffledImages = generateShuffledImages();
+
+/* ================================
+   💖 DOM ELEMENTS
+================================ */
+
+const grid = document.getElementById("reasons-grid");
+const container = document.getElementById("hearts-bg");
+const sideNav = document.getElementById("sideNav");
+
+const MAX_HEARTS = 25;
+
+/* ================================
+   💖 RENDER CARDS
+================================ */
+
+function renderReasons() {
+
+    const fragment = document.createDocumentFragment();
+
+    reasons.forEach((reason, index) => {
+
+        const card = document.createElement("div");
+        card.className = "card";
+        card.id = `reason-${reason.id}`;
+
+        const img = shuffledImages[index];
+
+        card.innerHTML = `
+            <div class="card-content">
+                <span class="card-num">Reason #${reason.id}</span>
+                <div class="card-title">${reason.title}</div>
+                <div class="card-desc">${reason.desc}</div>
+            </div>
+
+            <div class="card-img" style="background-image:url('${img}')"></div>
+        `;
+
+        fragment.appendChild(card);
+    });
+
+    grid.appendChild(fragment);
+}
+
+/* ================================
+   💖 SIDE NAV
+================================ */
+
+function buildSideNav() {
+
+    const jumpPoints = [1];
+
+    for (let i = 20; i <= reasons.length; i += 20) {
+        jumpPoints.push(i);
+    }
+
+    sideNav.innerHTML = jumpPoints.map(num => `
+        <button class="nav-dot" data-id="${num}">${num}</button>
+    `).join("");
+
+    document.querySelectorAll(".nav-dot").forEach(btn => {
+        btn.addEventListener("click", () => {
+            document.getElementById(`reason-${btn.dataset.id}`)
+                ?.scrollIntoView({
+                    behavior: "smooth",
+                    block: "center"
+                });
+        });
+    });
+}
+
+/* ================================
+   💖 SCROLL ANIMATION
+================================ */
+
+function setupObservers() {
+
+    const cards = document.querySelectorAll(".card");
+    const dots = document.querySelectorAll(".nav-dot");
+
+    const observer = new IntersectionObserver(entries => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+            }
+
+            const id = entry.target.id.split("-")[1];
+
+            if (entry.isIntersecting) {
+                dots.forEach(dot => {
+                    dot.classList.toggle(
+                        "active",
+                        dot.dataset.id === id
+                    );
+                });
+            }
+        });
+
+    }, { threshold: 0.5 });
+
+    cards.forEach(card => observer.observe(card));
+}
+
+/* ================================
+   💖 HEART ANIMATION
+================================ */
+
+function createHeart() {
+
+    if (container.children.length > MAX_HEARTS) {
+        container.removeChild(container.firstChild);
+    }
+
+    const heart = document.createElement("div");
+    heart.className = "floating-heart";
+    heart.textContent = "❤️";
+
+    const x = Math.random() * window.innerWidth;
+
+    heart.style.transform = `translate3d(${x}px, 100vh, 0)`;
+
+    container.appendChild(heart);
+
+    requestAnimationFrame(() => {
+        heart.style.transform =
+            `translate3d(${x}px, -120vh, 0) rotate(360deg)`;
+        heart.style.opacity = "0";
+    });
+
+    setTimeout(() => heart.remove(), 5000);
+}
+
+/* ================================
+   💖 INIT
+================================ */
+
+renderReasons();
+buildSideNav();
+setupObservers();
+
+setInterval(createHeart, 900);
+</script>
+</body>
+</html>
