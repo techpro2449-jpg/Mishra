@@ -71,7 +71,7 @@ body {
 }
 
 .hero h1 {
-    font-size: 3rem;
+    font-size: clamp(2rem, 5vw, 3.2rem);
     color: var(--text);
 }
 
@@ -105,43 +105,51 @@ body {
     transform: scale(0.95);
 }
 
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+
 /* 💖 Bento Grid */
+
 .bento-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    grid-auto-rows: 180px;
-
-    gap: 25px;
-    padding: 50px 10%;
-    max-width: 1300px;
-    margin: 0 auto;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1100px;
+    margin: auto;
+    /* Yeh line add karein: taaki rows ki height barabar ho */
+    grid-auto-rows: 1fr; 
 }
 
 /* Cards */
 .card {
     background: rgba(255, 255, 255, 0.25);
     backdrop-filter: blur(15px);
-
     border-radius: 25px;
     border: 1px solid rgba(255,255,255,0.3);
-
     color: #fff;
     text-decoration: none;
-    text-align: center;
 
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 
-    position: relative;
-    overflow: hidden;
+    /* Fixed height ko remove karke min-height use karein */
+    min-height: 180px; 
+    height: 100%; /* Yeh card ko row ki poori height dega */
+    padding: 20px;
+    text-align: center; /* Text center mein rahega */
 
-    transition: all 0.4s ease;
+    transition: all 0.35s ease;
+    box-sizing: border-box;
 }
 
 /* Glow sweep */
 .card::before {
+    display: none;
     content: "";
     position: absolute;
     width: 150%;
@@ -160,8 +168,8 @@ body {
 
 /* Hover */
 .card:hover {
-    transform: translateY(-12px) scale(1.06);
-    box-shadow: 0 25px 60px rgba(255, 105, 180, 0.35);
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 20px 50px rgba(255, 105, 180, 0.35);
 }
 
 /* Emoji */
@@ -185,33 +193,16 @@ body {
 }
 
 /* Grid sizes */
-.small { grid-column: span 1; }
-.medium { grid-column: span 2; }
-.wide { grid-column: span 2; }
-.tall { grid-row: span 2; }
-
-/* Desktop */
-@media (min-width: 1200px) {
-    .bento-grid {
-        grid-template-columns: repeat(4, 1fr);
-        grid-auto-rows: 210px;
-    }
+.small {
+    grid-column: span 1;
 }
 
-/* Mobile */
-@media (max-width: 768px) {
-    .bento-grid {
-        grid-template-columns: repeat(2, 1fr);
-        grid-auto-rows: 150px;
-    }
-
-    .wide,
-    .medium,
-    .tall {
-        grid-column: span 2;
-        grid-row: span 1;
-    }
+.wide {
+    grid-column: span 2;
 }
+.medium { grid-column: span 8; }
+.tall { grid-column: span 6; grid-row: span 2; }
+
 
 /* 💌 POPUP MESSAGE (FIXED) */
 .mystery-msg {
@@ -275,3 +266,16 @@ body {
         opacity: 1;
     }
 }
+
+.hero {
+    text-align: center;
+    padding: 3rem 1rem;
+    max-width: 800px;
+    margin: auto;
+}
+
+
+.card:hover {
+    transform: translateY(-10px) scale(1.03);
+}
+
