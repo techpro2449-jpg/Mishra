@@ -210,7 +210,8 @@ body {
 }
 
 .overlay-content {
-    margin-top: auto;
+    margin-top: 0;
+    text-align: center;
     z-index: 2;
 }
 
