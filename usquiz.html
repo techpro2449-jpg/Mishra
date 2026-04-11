@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0f0c29">
+    <title>A Journey of Us | Premium</title>
+    <link rel="stylesheet" href="usquiz.css">
+</head>
+<body>
+
+    <nav class="top-nav">
+    <div class="logo">For Mishra ❤️</div>
+
+    <ul>
+        <li><a href="home.html">Home</a></li>
+    </ul>
+</nav>
+
+<div class="bg-animation"></div>
+
+<div class="app-wrapper">
+    <div class="app-container">
+
+        <div class="screen active landing-bg" id="landing">
+            <div class="overlay-content">
+                <h1>How well do you know us?</h1>
+                <p>Every memory has a story.</p>
+                <button class="btn btn-hero" onclick="showScreen('section-select')">Start ✨</button>
+            </div>
+        </div>
+
+        <div class="screen" id="section-select">
+            <h1>Choose</h1>
+            <div class="section-list">
+                <div class="section-item" onclick="selectSection('her', this)">🌸 Mishra</div>
+                <div class="section-item" onclick="selectSection('me', this)">⭐ Pathak</div>
+                <div class="section-item" onclick="selectSection('common', this)">💞 Common World</div>
+            </div>
+            
+            <div class="bottom-bar">
+                <button class="btn btn-outline" onclick="showScreen('landing')">Back</button>
+                <button class="btn btn-primary" onclick="goToCategory()">Continue</button>
+            </div>
+        </div>
+
+        <div class="screen" id="category-select">
+            <h1>Categories</h1>
+            <div id="catGrid" class="section-list">
+                </div>
+            
+            <div class="bottom-bar">
+                <button class="btn btn-outline" onclick="showScreen('section-select')">Back</button>
+                <button class="btn btn-primary" onclick="confirmCategory()">Continue</button>
+            </div>
+        </div>
+
+        <div class="screen" id="quiz-screen">
+            <div class="progress-container">
+                <div class="progress-fill" id="progressBar"></div>
+            </div>
+            <p id="questionCount"></p>
+            <h2 id="questionText"></h2>
+            <div id="optionsContainer" style="margin-top: 20px;"></div>
+            
+            <div class="bottom-bar">
+                <button class="btn" id="nextBtn">Next</button>
+            </div>
+        </div>
+
+        <<div class="screen" id="result-screen">
+    <div class="result-header">
+        <h1>Journey Complete!</h1>
+        <p id="result-feedback"></p>
+    </div>
+
+    <div class="score-container">
+        <svg class="score-svg" viewBox="0 0 100 100">
+            <circle class="score-bg" cx="50" cy="50" r="45"></circle>
+            <circle class="score-progress" id="scoreCircle" cx="50" cy="50" r="45"></circle>
+        </svg>
+        <div class="score-text">
+            <span id="finalScore">0</span>
+            <small id="totalPossible">/0</small>
+        </div>
+    </div>
+
+    <div class="quote-box">
+        <p id="randomQuote"></p>
+    </div>
+
+    <div class="bottom-bar">
+        <button class="btn btn-hero" onclick="location.reload()">Play Again ✨</button>
+    </div>
+</div>
+
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="app-footer">
+    <p>Made with ❤️ by Pathak & Mishra</p>
+    <small>Every memory matters ✨</small>
+</footer>
+
+<script src="usquiz.js"></script>
+</body>
+</html>

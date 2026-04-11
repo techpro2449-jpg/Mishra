@@ -1,0 +1,705 @@
+/* =========================
+   🌈 ROOT VARIABLES
+========================= */
+:root {
+    --primary-pink: #ff007a;
+    --accent-purple: #8a2be2;
+    --text-main: #ffffff;
+    --text-dim: #d1d1d1;
+}
+
+
+/* =========================
+   🔄 RESET
+========================= */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+
+/* =========================
+   🌌 BODY + BACKGROUND
+========================= */
+body {
+    background: #050505;
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(255, 0, 122, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(138, 43, 226, 0.15) 0%, transparent 40%);
+    color: var(--text-main);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   🌐 TOP NAVBAR
+========================= */
+.top-nav {
+    width: 100%;
+    padding: 14px 6%;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+
+    background: rgba(10, 10, 20, 0.6);
+    backdrop-filter: blur(20px);
+
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.top-nav .logo {
+    font-size: 18px;
+    font-weight: 800;
+    color: #ff007a;
+    letter-spacing: 1px;
+}
+
+.top-nav ul {
+    display: flex;
+    gap: 18px;
+    list-style: none;
+}
+
+.top-nav a {
+    text-decoration: none;
+    color: rgba(255,255,255,0.85);
+    font-weight: 600;
+    font-size: 14px;
+    position: relative;
+}
+
+/* hover underline */
+.top-nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0%;
+    height: 2px;
+    background: linear-gradient(90deg, #ff007a, #8a2be2);
+    transition: 0.3s;
+}
+
+.top-nav a:hover::after {
+    width: 100%;
+}
+
+
+/* =========================
+   ✨ ANIMATIONS
+========================= */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes floatMove {
+    to {
+        transform: translate(150px, -120px) scale(1.2);
+    }
+}
+
+.screen.active * {
+    animation: fadeInUp 0.6s ease;
+}
+
+
+/* =========================
+   🎨 BACKGROUND BLOBS
+========================= */
+.bg-animation {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+}
+
+.bg-animation::before,
+.bg-animation::after {
+    content: "";
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: 0.4;
+    animation: floatMove 18s ease-in-out infinite alternate;
+}
+
+.bg-animation::before {
+    background: #ff007a;
+    top: -100px;
+    left: -100px;
+}
+
+.bg-animation::after {
+    background: #8a2be2;
+    bottom: -100px;
+    right: -100px;
+}
+
+
+/* =========================
+   📦 APP LAYOUT
+========================= */
+.app-wrapper {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.app-container {
+    width: 100%;
+    max-width: 420px;
+    height: 92vh;
+
+    background: rgba(15, 15, 25, 0.65);
+    backdrop-filter: blur(40px);
+
+    border-radius: 45px;
+    overflow: hidden;
+
+    border: 1px solid rgba(255,255,255,0.12);
+
+    box-shadow:
+        0 40px 100px rgba(0,0,0,0.6),
+        inset 0 0 30px rgba(255,255,255,0.05);
+
+    display: flex;
+    flex-direction: column;
+
+    position: relative;
+    z-index: 1;
+}
+
+
+/* =========================
+   🖼️ LANDING SCREEN
+========================= */
+.landing-bg {
+    background: 
+        linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.85)),
+        url('mcq.png');
+    
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    padding-bottom: 40px;
+}
+
+.overlay-content {
+    margin-top: auto;
+    z-index: 2;
+}
+
+
+/* =========================
+   📱 SCREEN SYSTEM
+========================= */
+.screen {
+    position: absolute;
+    inset: 0;
+    padding: 30px;
+    display: none;
+    flex-direction: column; /* This is crucial for pushing the bar down */
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.4s ease;
+}
+
+.screen.active {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+}
+/* =========================
+   🚀 SHORT & PREMIUM HERO BUTTON
+========================= */
+.btn-hero {
+    background: #ff007a !important; /* Solid Pink */
+    color: #ffffff !important;
+    
+    /* Size: Badi width aur height */
+    width: 85%;            /* Screen ki 85% width cover karega */
+    height: 55px !important; 
+    
+    /* Shape: Pure Capsule */
+    border-radius: 50px !important; 
+    
+    /* Typography */
+    font-size: 18px !important;
+    font-weight: 800 !important;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    
+    /* Simple UI fixes */
+    border: none !important;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;        /* Center mein alignment ke liye */
+    
+    /* Halki si depth */
+    box-shadow: 0 6px 20px rgba(255, 0, 122, 0.3);
+    transition: transform 0.2s ease;
+}
+
+/* Click Effect */
+.btn-hero:active {
+    transform: scale(0.95);
+}
+/* =========================
+   🧾 TYPOGRAPHY
+========================= */
+h1 {
+   font-size: 32px; /* Perfect balance for mobile */
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 10px;
+    text-align: left;
+    /* Gradient color according to your design */
+    background: linear-gradient(90deg, #ff007a, #ff4b91);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h2 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+p {
+  font-size: 15px;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 30px; /* Button se distance */
+    font-weight: 400;
+}
+
+
+/* =========================
+   🔘 BUTTONS
+========================= */
+.bottom-bar {
+    display: flex;
+    justify-content: bwtween;
+    align-items: center;
+    gap: 15px;
+    margin-top: auto; /* Final insurance it stays at the bottom */
+    padding-top: 20px;
+}
+
+.btn {
+    flex: 1; /* Makes both buttons equal width */
+    height: 50px;
+    border-radius: 15px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+    border: none;
+}
+
+/* Back Button - Outline Pink */
+.btn-outline {
+    background: transparent !important;
+    border: 1px solid var(--primary-pink) !important;
+    color: var(--primary-pink) !important;
+    box-shadow: none !important;
+}
+
+/* Continue Button - Solid Pink */
+.btn-primary, .btn:not(.btn-outline) {
+    background: var(--primary-pink) !important;
+    color: white !important;
+    box-shadow: 0 5px 15px rgba(255, 0, 122, 0.3);
+}
+
+.btn:active {
+    transform: scale(0.95);
+}
+/* =========================
+   📂 SECTION ITEMS
+========================= */
+.section-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+    flex-grow: 1; /* This pushes the bottom bar all the way down */
+}
+
+.section-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 18px 20px;
+    border-radius: 18px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    transition: 0.3s;
+}
+
+.section-item.selected {
+    border-color: var(--primary-pink);
+    background: rgba(255, 0, 122, 0.1);
+}
+.section-item:hover {
+    transform: translateY(-5px) scale(1.03);
+    background: linear-gradient(
+        135deg,
+        rgba(255,0,122,0.25),
+        rgba(138,43,226,0.25)
+    );
+}
+
+
+/* =========================
+   🗂️ CATEGORY ITEMS
+========================= */
+.category-item,
+.cat-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    width: 100%;
+    min-height: 70px;
+
+    padding: 22px 20px;
+
+    border-radius: 22px;
+
+    font-size: 18px;
+    font-weight: 600;
+
+    cursor: pointer;
+    color: #fff;
+
+    background: linear-gradient(
+        145deg,
+        rgba(255,255,255,0.08),
+        rgba(0,0,0,0.5)
+    );
+
+    backdrop-filter: blur(20px);
+
+    border: 1px solid rgba(255,255,255,0.12);
+
+    box-shadow:
+        inset 0 2px 6px rgba(255,255,255,0.15),
+        inset 0 -6px 12px rgba(0,0,0,0.7),
+        0 10px 25px rgba(0,0,0,0.6);
+
+    transition: all 0.25s ease;
+}
+
+.category-item.selected {
+    border-color: var(--primary-pink);
+    background: rgba(255, 0, 122, 0.1);
+    box-shadow: 0 0 15px rgba(255, 0, 122, 0.2);
+}
+
+.category-item:hover,
+.cat-item:hover {
+    transform: translateY(-4px) scale(1.02);
+    background: linear-gradient(
+        135deg,
+        rgba(255,0,122,0.15),
+        rgba(138,43,226,0.15)
+    );
+}
+
+
+/* =========================
+   ❓ OPTIONS (QUIZ)
+========================= */
+.option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 18px;
+    margin-bottom: 12px;
+
+    border-radius: 18px;
+
+    cursor: pointer;
+
+    background: rgba(255,255,255,0.05);
+
+    backdrop-filter: blur(12px);
+
+    border: 1px solid rgba(255,255,255,0.1);
+
+    transition: all 0.3s ease;
+}
+
+.option:hover {
+    transform: translateY(-4px) scale(1.02);
+}
+
+.option.selected {
+    background: linear-gradient(135deg, #ff007a, #8a2be2);
+    box-shadow: 0 10px 25px rgba(255,0,122,0.4);
+}
+
+/* Feedback Colors */
+.option.correct-anim {
+    background: linear-gradient(135deg, #2ecc71, #27ae60) !important;
+    border-color: #2ecc71 !important;
+    color: white !important;
+    box-shadow: 0 0 20px rgba(46, 204, 113, 0.4);
+}
+
+.option.wrong-anim {
+    background: linear-gradient(135deg, #ff4757, #ff6b81) !important;
+    border-color: #ff4757 !important;
+    color: white !important;
+    box-shadow: 0 0 20px rgba(255, 71, 87, 0.4);
+    animation: shake 0.4s ease-in-out;
+}
+
+/* Shake animation for wrong answer */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    75% { transform: translateX(10px); }
+}
+
+/* Disable pointer after answer */
+.option.selected {
+    pointer-events: none;
+}
+/* =========================
+   📊 PROGRESS BAR
+========================= */
+.progress-container {
+    height: 6px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #ff007a, #8a2be2);
+    box-shadow: 0 0 15px rgba(255,0,122,0.7);
+    transition: 0.4s;
+}
+
+
+/* =========================
+   🏆 REFINED RESULT SCREEN
+========================= */
+
+
+.result-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.result-header h1 {
+    font-size: 34px;
+    font-weight: 900;
+    margin-bottom: 12px;
+
+    text-align: center; /* 🔥 IMPORTANT */
+
+    /* Clean premium gradient */
+    background: linear-gradient(90deg, #ff007a, #ff4b91, #8a2be2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    letter-spacing: 1px;
+    line-height: 1.2;
+}
+
+/* Animated Progress Circle */
+.score-container {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    margin: 0 auto 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.score-svg {
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg); /* Start animation from top */
+}
+
+.score-bg {
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.08);
+    stroke-width: 7;
+}
+
+.score-progress {
+    fill: none;
+    stroke: var(--primary-pink);
+    stroke-width: 8;
+    stroke-linecap: round;
+    stroke-dasharray: 283; /* 2 * PI * 45 approx */
+    stroke-dashoffset: 283;
+    transition: stroke-dashoffset 1.8s cubic-bezier(0.4, 0, 0.2, 1);
+    filter: drop-shadow(0 0 10px rgba(255, 0, 122, 0.5));
+}
+
+.score-text {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#finalScore {
+    font-size: 52px;
+    font-weight: 900;
+    line-height: 1;
+    background: linear-gradient(to bottom, #ffffff, #ffb6d9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#totalPossible {
+    font-size: 16px;
+    color: var(--text-dim);
+    font-weight: 500;
+}
+
+/* ✨ PREMIUM QUOTE BOX */
+.quote-box {
+    background: linear-gradient(
+        145deg,
+        rgba(255, 255, 255, 0.05),
+        rgba(255, 255, 255, 0.01)
+    );
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-left: 4px solid var(--primary-pink);
+    padding: 25px 20px;
+    margin: 10px 0 30px 0;
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Quote symbol background hint */
+.quote-box::before {
+    content: "“";
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    font-size: 60px;
+    color: rgba(255, 0, 122, 0.1);
+    font-family: serif;
+}
+
+#randomQuote {
+    font-style: italic;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+    margin: 0;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+/* Button override for Result Screen spacing */
+#result-screen .bottom-bar {
+    margin-top: auto;
+    animation: glowPulse 2s infinite alternate;
+}
+
+
+@keyframes glowPulse {
+    from {
+        text-shadow: 0 0 10px rgba(255,0,122,0.4);
+    }
+    to {
+        text-shadow: 0 0 25px rgba(255,0,122,0.9);
+    }
+}
+
+/* =========================
+   📱 RESPONSIVE
+========================= */
+@media (min-width: 768px) {
+    .app-container {
+        max-width: 520px;
+        height: 88vh;
+    }
+}
+
+@media (min-width: 1200px) {
+    .app-container {
+        max-width: 600px;
+        height: 85vh;
+    }
+}
+
+
+/* =========================
+   📌 APP FOOTER
+========================= */
+.app-footer {
+    width: 100%;
+    text-align: center;
+    padding: 18px 10px;
+    margin-top: auto;
+
+    background: rgba(255, 255, 255, 0.04);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+    backdrop-filter: blur(10px);
+
+    position: relative;
+    z-index: 2;
+}
+
+.app-footer p {
+    font-size: 14px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 5px;
+}
+
+.app-footer small {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.6);
+    letter-spacing: 0.5px;
+}
