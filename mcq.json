@@ -1,0 +1,101 @@
+{
+  "sections": {
+    "common": {
+      "categories": [
+        { "id": "fun", "name": "Fun", "icon": "🍌" }
+      ],
+      "questions": {
+        "fun": []
+      }
+    },
+    "her": {
+      "categories": [
+        { "id": "food", "name": "Foods", "icon": "🍔" }
+      ],
+      "questions": {
+        "food": []
+      }
+    },
+    "me": {
+      "categories": [
+        { "id": "memories", "name": "Emotional Memory", "icon": "🧠" },
+        { "id": "behavior", "name": "Behavior & Reactions", "icon": "❤️" },
+        { "id": "healing", "name": "Needs & Healing", "icon": "🧩" },
+        { "id": "inner_world", "name": "Inner World", "icon": "🔒" },
+        { "id": "bond", "name": "Our Bond", "icon": "💞" },
+        { "id": "identity", "name": "Identity Basics", "icon": "👤" }
+      ],
+      "questions": {
+        "memories": [
+          { "q": "What was I feeling the first time we had a serious conversation?", "options": ["I was just bored", "I wanted attention", "I felt you needed help", "I was confused what to say", "I was testing you"], "correct": 2 },
+          { "q": "What exact thing made me realize I like you?", "options": ["Your smile", "The way you talk", "Naruto talks/moments", "Your caring nature", "Random late-night chats"], "correct": 2 },
+          { "q": "What small thing you did that affected me a lot?", "options": ["Sending good morning texts", "Birthday wish", "Replying fast", "Calling me first", "Sharing songs"], "correct": 1 },
+          { "q": "What moment of ours I replay in my mind?", "options": ["Our first chat", "Your pictures", "Late night calls", "Our fights", "First compliment"], "correct": 1 },
+          { "q": "What conversation changed my behavior towards you?", "options": ["Our first fight", "When you ignored me", "When you started responding to me properly", "When we joked around", "Random deep talk"], "correct": 2 },
+          { "q": "What moment made me emotionally weak in front of you?", "options": ["Your texts", "Your voice", "Your silence", "Your anger", "Your messages"], "correct": 1 },
+          { "q": "When did I feel closest to you?", "options": ["When we first talked", "During fights", "When you brought phone close to me", "When we laughed together", "During late-night talks"], "correct": 2 },
+          { "q": "What thing you said that I never forgot?", "options": ["Take care", "I miss you", "Saying yes to the relationship", "You matter to me", "Don’t leave me"], "correct": 2 },
+          { "q": "What moment I wish I could relive with you?", "options": ["First chat", "First call", "Truth and dare moment", "Our first fight", "Random late-night talk"], "correct": 2 },
+          { "q": "What memory of us makes me smile randomly?", "options": ["Our fights", "Past moments together", "Your selfies", "Our jokes", "Random chats"], "correct": 1 },
+          { "q": "What moment I felt I might lose you?", "options": ["When you got busy", "When you said you need space", "When we fought", "When you ignored me", "When you stopped replying"], "correct": 1 },
+          { "q": "What memory I pretend I don’t care about but actually do?", "options": ["Your friends", "Your past relationships", "Your personal life", "Your habits", "Your mood swings"], "correct": 2 }
+        ],
+        "behavior": [
+          { "q": "What do I usually say when I miss you but don’t want to sound needy?", "options": ["I miss you directly", "I go silent", "I use different cute names", "I send random reels", "I act busy"], "correct": 2 },
+          { "q": "When I’m upset, do I talk more or go silent?", "options": ["I start talking more than usual", "I go silent but expect you to understand", "I go silent but want you to talk", "I ignore everything completely"], "correct": 2 },
+          { "q": "What is my 'I’m not okay but I’ll act normal' behavior?", "options": ["I become extra happy suddenly", "I avoid deep conversations", "I act normal but think about the future a lot", "I stop replying properly"], "correct": 2 },
+          { "q": "How do I indirectly ask for attention?", "options": ["I stop texting first", "I say 'do whatever you want'", "I say 'I miss you'", "I send random dry messages"], "correct": 2 },
+          { "q": "What is my 'testing you' behavior?", "options": ["Ignoring you for some time", "Asking repeated questions", "Telling you negative points as if they’re correct", "Comparing with others"], "correct": 2 },
+          { "q": "When I’m jealous, what subtle thing do I do?", "options": ["I become quiet suddenly", "I ask indirect questions", "I act normal but observe more", "I don’t feel jealousy"], "correct": 3 },
+          { "q": "How do I react when I feel ignored?", "options": ["I stop talking completely", "I get angry or say 'mujhe baat nahi karni'", "I act like nothing happened", "I try to get attention more"], "correct": 1 },
+          { "q": "What’s my pattern in arguments?", "options": ["I stay silent", "I end it quickly", "I recall old things to relate", "I change the topic"], "correct": 2 },
+          { "q": "When I overthink, what do I assume first?", "options": ["Something bad will happen", "You don’t care", "Farak padta hai (it matters)", "I did something wrong"], "correct": 2 },
+          { "q": "What is my comfort behavior?", "options": ["I stay alone", "I sleep", "I show love or make jokes", "I scroll phone"], "correct": 2 },
+          { "q": "What thing instantly ruins my mood?", "options": ["Arguments", "Being ignored", "Waiting and not getting time", "Small mistakes"], "correct": 2 }
+        ],
+        "healing": [
+          { "q": "Do I want solutions or emotional support?", "options": ["Only solutions", "Only emotional support", "Both depending on situation", "Nothing"], "correct": 2 },
+          { "q": "What thing instantly fixes my mood?", "options": ["Gifts", "Long texts", "Your voice", "Time alone"], "correct": 2 },
+          { "q": "What hurts me more — words or actions?", "options": ["Words", "Actions", "Both", "Silence"], "correct": 2 },
+          { "q": "What type of apology works on me?", "options": ["Simple sorry", "Gifts", "Effort over time", "Public apology"], "correct": 2 },
+          { "q": "What makes me feel emotionally safe?", "options": ["Giving space", "Making effort and understanding me", "Agreeing with everything", "Avoiding serious talks"], "correct": 1 },
+          { "q": "What makes me emotionally shut down?", "options": ["Over-talking", "Waiting and bad timing", "Too much attention", "Jokes during serious moments"], "correct": 1 },
+          { "q": "What do I forgive easily?", "options": ["Small mistakes", "Everything", "Nothing", "Only when asked"], "correct": 1 },
+          { "q": "What do I never forget?", "options": ["Arguments", "Words", "Extreme happy/sad actions", "First impressions"], "correct": 2 },
+          { "q": "What breaks my trust instantly?", "options": ["Ignoring", "Lying", "Not replying fast", "Canceling plans"], "correct": 1 }
+        ],
+        "inner_world": [
+          { "q": "What side of me I don’t show everyone?", "options": ["The kid inside me", "Mature side", "Anger", "Emotional side"], "correct": 0 },
+          { "q": "When do I act strong but feel weak?", "options": ["Alone at night", "When I hold you", "Around others", "When things go wrong"], "correct": 1 },
+          { "q": "What do I overthink about us?", "options": ["Future", "Love", "Is it going to work", "Others’ opinions"], "correct": 2 },
+          { "q": "What part of me needs healing?", "options": ["Past", "Trust issues", "My whole self", "Fears"], "correct": 2 },
+          { "q": "What triggers me emotionally?", "options": ["Being ignored", "Repeating things I don’t like", "Not understood", "Feeling unimportant"], "correct": 1 },
+          { "q": "What am I proud of but don’t say?", "options": ["Achievements", "Strength", "Innocence", "Loyalty"], "correct": 2 },
+          { "q": "What do I crave but don’t express?", "options": ["Attention", "A hug from you", "Reassurance", "Time"], "correct": 1 },
+          { "q": "What do I wish you understood without me saying?", "options": ["Mood swings", "My emotions", "Expectations", "Silence"], "correct": 1 },
+          { "q": "What do I struggle to explain?", "options": ["Thoughts", "Emotions", "Past", "Fears"], "correct": 1 },
+          { "q": "What do I need from you on my worst days?", "options": ["Space", "Advice", "Love", "Distraction"], "correct": 2 }
+        ],
+        "bond": [
+          { "q": "What makes our bond unique?", "options": ["Truth between us", "Time spent", "Memories", "Handling fights"], "correct": 0 },
+          { "q": "What makes me laugh the most?", "options": ["Silly moments", "Annoying jokes", "Cute things", "Old memories"], "correct": 1 },
+          { "q": "What would I choose — ego or you?", "options": ["Ego", "You always", "Depends", "Stay silent"], "correct": 1 },
+          { "q": "What do I remember more — your words or your actions?", "options": ["Words", "Actions", "Both", "Mood-based"], "correct": 1 },
+          { "q": "What thing about you shocked me first?", "options": ["Attitude", "Honesty", "Not religious", "Boldness"], "correct": 2 }
+        ],
+        "identity": [
+          { "q": "What is my favorite color?", "options": ["Red", "Blue", "Black", "White"], "correct": 1 },
+          { "q": "What is my favorite season?", "options": ["Winter", "Summer", "Monsoon", "Spring"], "correct": 2 },
+          { "q": "What is my nickname at home?", "options": ["Avi", "Adi", "Aviral", "Avu"], "correct": 0 },
+          { "q": "Do I prefer calls or texts?", "options": ["Calls", "Texts", "Depends on mood", "None"], "correct": 2 },
+          { "q": "When did I fall for you?", "options": ["First meet", "On my birthday", "After days", "When you confessed"], "correct": 1 },
+          { "q": "Why do I love you?", "options": ["Looks", "Nature", "Innocence", "Talking style"], "correct": 2 },
+          { "q": "What is my love language?", "options": ["Gifts", "Time", "Calling different names", "Touch"], "correct": 2 },
+          { "q": "How do I show love?", "options": ["Surprises", "Random expressive actions", "Texting", "Silence"], "correct": 1 },
+          { "q": "What hurts me most in love?", "options": ["Being ignored", "Disrespect & lies", "No time", "Distance"], "correct": 1 },
+          { "q": "Do I like long chats?", "options": ["No", "Sometimes", "Yes", "Only at night"], "correct": 2 }
+        ]
+      }
+    }
+  }
+}
