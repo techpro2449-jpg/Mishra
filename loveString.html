@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HeartStrings</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#ffeef3;
+    padding:20px;
+}
+
+.container{
+    max-width:1400px;
+    margin:auto;
+    background:#fff9fb;
+    border-radius:30px;
+    overflow:hidden;
+    box-shadow:0 15px 40px rgba(255,120,160,.15);
+}
+/* NAVBAR */
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:16px 40px;
+    background:rgba(255,255,255,0.85);
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+    border-bottom:1px solid rgba(255,79,135,0.12);
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+/* Logo */
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    text-decoration:none;
+}
+
+.logo-icon{
+    font-size:38px;
+    transition:.3s ease;
+}
+
+.logo:hover .logo-icon{
+    transform:rotate(-8deg) scale(1.05);
+}
+
+.logo-text h2{
+    font-family:'Dancing Script',cursive;
+    color:#ff4f87;
+    font-size:34px;
+    line-height:1;
+}
+
+.logo-text p{
+    font-size:12px;
+    color:#888;
+    margin-top:3px;
+}
+
+/* Home Button (smaller) */
+.home-link{
+    position:relative;
+    overflow:hidden;
+    text-decoration:none;
+    color:#fff;
+    background:linear-gradient(135deg,#ff4f87,#ff2c6d);
+    padding:9px 20px;
+    border-radius:40px;
+    font-size:13px;
+    font-weight:600;
+    box-shadow:0 6px 14px rgba(255,79,135,.18);
+    transition:.3s ease;
+}
+
+/* Shine Effect */
+.home-link::before{
+    content:'';
+    position:absolute;
+    top:0;
+    left:-120%;
+    width:70px;
+    height:100%;
+    background:rgba(255,255,255,0.25);
+    transform:skewX(-25deg);
+    transition:.5s;
+}
+
+.home-link:hover::before{
+    left:130%;
+}
+
+.home-link:hover{
+    transform:translateY(-1px);
+    box-shadow:0 10px 18px rgba(255,79,135,.25);
+}
+
+.home-link:active{
+    transform:scale(.96);
+}
+
+/* Responsive */
+@media(max-width:768px){
+    .navbar{
+        flex-direction:column;
+        gap:12px;
+        padding:16px;
+    }
+}
+/* Hero */
+
+.hero{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    align-items:center;
+    padding:70px;
+    background:linear-gradient(to right,#fff7f9,#ffeef3);
+}
+
+.hero h1{
+    font-family:'Playfair Display',serif;
+    font-size:76px;
+    line-height:1.1;
+    color:#18152c;
+}
+
+.hero h1 span{
+    color:#ff4f87;
+    font-family:'Dancing Script',cursive;
+}
+
+.hero p{
+    margin:25px 0;
+    color:#555;
+    font-size:24px;
+    line-height:1.7;
+}
+
+
+
+.hero-image{
+    text-align:center;
+}
+
+.hero-image img{
+    width:90%;
+    max-width:600px;
+}
+
+/* Section */
+
+.section{
+    padding:60px;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:15px;
+}
+
+.section-title h2{
+    font-family:'Playfair Display',serif;
+    font-size:50px;
+    color:#24122d;
+}
+
+.section-title p{
+    color:#666;
+    margin-top:10px;
+}
+
+/* Cards */
+
+/* Cards Container */
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:28px;
+    margin-top:40px;
+}
+
+/* Card */
+.card{
+    position:relative;
+    border-radius:24px;
+    padding:30px 24px;
+    text-align:center;
+    border:1px solid rgba(255,120,160,0.15);
+    background:rgba(255,255,255,0.8);
+    backdrop-filter:blur(10px);
+    box-shadow:0 8px 25px rgba(255,120,160,0.08);
+    transition:0.35s ease;
+    overflow:hidden;
+}
+
+.card::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:radial-gradient(circle,rgba(255,79,135,0.12),transparent 65%);
+    transform:scale(0);
+    transition:0.5s ease;
+    pointer-events:none; 
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 18px 45px rgba(255,79,135,0.18);
+}
+
+.card:hover::before{
+    transform:scale(1);
+}
+
+.card img{
+    width:90px;
+    height:90px;
+    object-fit:contain;
+    margin-bottom:15px;
+    transition:0.3s ease;
+}
+
+.card:hover img{
+    transform:scale(1.08) rotate(-3deg);
+}
+
+.card h3{
+    font-family:'Playfair Display',serif;
+    font-size:28px;
+    margin-bottom:10px;
+    color:#2a1a2f;
+}
+
+.card p{
+    color:#666;
+    line-height:1.6;
+    font-size:15px;
+    margin-bottom:20px;
+}
+
+.explore-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:12px 22px;
+    border-radius:999px;
+    text-decoration:none;
+    font-size:14px;
+    font-weight:600;
+    color:#ff4f87;
+    background:#fff;
+    border:1px solid rgba(255,79,135,0.25);
+    transition:0.3s ease;
+}
+
+.explore-btn:hover{
+    background:#ff4f87;
+    color:#fff;
+    transform:translateY(-2px);
+}
+
+/* Card Accent Colors */
+.card:nth-child(1){background:linear-gradient(145deg,#fff0f4,#fff);}
+.card:nth-child(2){background:linear-gradient(145deg,#fff3ed,#fff);}
+.card:nth-child(3){background:linear-gradient(145deg,#fdf0ff,#fff);}
+.card:nth-child(4){background:linear-gradient(145deg,#fff9e7,#fff);}
+
+.footer{
+    margin-top:50px;
+    padding:25px 20px;
+    text-align:center;
+    background:linear-gradient(135deg,#ff4f87,#ff2c6d);
+    color:white;
+    border-top-left-radius:25px;
+    border-top-right-radius:25px;
+}
+
+.footer .quote{
+    font-family:'Playfair Display',serif;
+    font-size:18px;
+    margin-bottom:8px;
+    opacity:0.95;
+}
+
+.footer .copy{
+    font-size:13px;
+    opacity:0.85;
+}
+
+
+/* Responsive */
+
+@media(max-width:1100px){
+
+.hero{
+    grid-template-columns:1fr;
+    text-align:center;
+}
+
+.cards{
+    grid-template-columns:repeat(2,1fr);
+}
+
+
+}
+
+@media(max-width:768px){
+
+
+.hero{
+    padding:40px;
+}
+
+.hero h1{
+    font-size:55px;
+}
+
+
+    .cards{
+        grid-template-columns: 1fr;
+        gap:18px;
+        margin-top:25px;
+    }
+
+    .card{
+        padding:22px 18px;
+        border-radius:18px;
+    }
+
+    .card img{
+        width:90px;
+        margin-bottom:12px;
+    }
+
+    .card h3{
+        font-size:26px;
+    }
+
+    .card p{
+        font-size:14px;
+        line-height:1.5;
+        min-height:auto;
+    }
+
+    .explore-btn{
+        padding:10px 18px;
+        font-size:14px;
+    }
+
+.section{
+    padding:30px;
+}
+
+
+}
+
+@media (max-width: 420px){
+
+    .card{
+        padding:18px 14px;
+    }
+
+    .card h3{
+        font-size:22px;
+    }
+
+    .card img{
+        width:75px;
+    }
+
+    .section-title h2{
+        font-size:32px;
+    }
+
+    .section-title p{
+        font-size:14px;
+    }
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+<nav class="navbar">
+
+    <!-- Logo -->
+    <a href="loveString.html" class="logo">
+        <span class="logo-icon">💘</span>
+
+        <div class="logo-text">
+            <h2>LoveStrings</h2>
+            <p>Words that touch hearts ❤️</p>
+        </div>
+    </a>
+
+    <!-- Single Navigation Link -->
+    <div class="nav-links">
+        <a href="home.html" class="home-link">
+            🏠 Home
+        </a>
+    </div>
+
+</nav>
+
+   <!-- Hero -->
+<section class="hero">
+
+    <div>
+
+        <h1>
+            Every Meme Has <br>
+            A <span>Memory❤️</span>
+        </h1>
+
+        <p>
+            Collecting memories, loving you more each day.
+        </p>
+
+    </div>
+
+    <div class="hero-image">
+        <img src="Love_String_hero.png" alt="">
+    </div>
+
+</section>
+
+    <!-- Cards -->
+    <section class="section">
+
+        <div class="section-title">
+            <h2>Choose a Style</h2>
+            <p>Pick the perfect tone for your special someone</p>
+        </div>
+
+        <div class="cards">
+
+            <div class="card">
+                <img src="https://cdn-icons-png.flaticon.com/512/944/944631.png">
+                <h3>💌 Love Notes</h3>
+                <p>Sweet and heartfelt notes straight from the heart.</p>
+                <a href="meme/lovenote.html" class="explore-btn">Explore →</a>
+            </div>
+
+            <div class="card">
+                <img src="https://cdn-icons-png.flaticon.com/512/2589/2589175.png">
+                <h3>❤️ Romantic</h3>
+                <p>Deep, passionate words to melt their heart.</p>
+                <a href="meme/romentic.html" class="explore-btn">Explore →</a>
+            </div>
+
+            <div class="card">
+                <img src="https://cdn-icons-png.flaticon.com/512/742/742751.png">
+                <h3>😘 Flirty</h3>
+                <p>Playful and charming lines to spark the vibe.</p>
+                <a href="meme/flirty.html" class="explore-btn">Explore →</a>
+            </div>
+
+            <div class="card">
+                <img src="https://cdn-icons-png.flaticon.com/512/616/616554.png">
+                <h3>🎭 Drama</h3>
+                <p>Intense, story-like notes for dramatic souls.</p>
+                <a href="meme/drama.html" class="explore-btn">Explore →</a>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+<footer class="footer">
+    <p class="quote">“Every heartbeat writes your name in my story Mishra. 💖”</p>
+    <p class="copy">© 2026 LoveStrings • Made by Pathak 💘</p>
+</footer>
+
+</footer>
+
+</div>
+
+</body>
+</html>
