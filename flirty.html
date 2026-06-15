@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flirty Notes ❤️ | Mishra</title>
+
+<link rel="stylesheet" href="flirty.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&family=Playfair+Display:wght@400;700&family=Cormorant+Garamond:wght@400;500;600&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+    <span class="close">&times;</span>
+    <img id="lightbox-img">
+</div>
+
+<!-- NAV -->
+<nav>
+    <h2 class="logo">For Mishra ❤️</h2>
+
+    <ul>
+        <li><a href="../home.html">Home</a></li>
+        <li>|</li>
+        <li><a href="../loveString.html">Love string</a></li>
+    </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>Flirty 💌</h1>
+        <p>
+            These photos aren’t just memories…  
+            they are reasons why I can’t stop thinking about you 😏❤️
+        </p>
+    </div>
+</section>
+
+<!-- IMAGES -->
+<section class="gallery">
+<div class="card"><img src="meme_photo/meme_flt1.jpg"></div>
+<div class="card"><img src="meme_photo/meme_flt2.jpg"></div>
+<div class="card"><img src="meme_photo/meme_flt3.jpg"></div>
+<div class="card"><img src="meme_photo/meme_flt4.jpg"></div>
+<div class="card"><img src="meme_photo/meme_flt5.jpg"></div>
+<div class="card"><img src="meme_photo/meme_flt6.jpg"></div>
+<div class="card"><img src="meme_photo/meme_flt7.jpg"></div>
+<div class="card"><img src="meme_photo/meme_flt8.jpg"></div>
+<div class="card"><img src="meme_photo/meme_flt9.jpg"></div>
+<div class="card"><img src="meme_photo/meme_flt10.jpg"></div>
+<div class="card"><img src="meme_photo/meme_flt11.jpg"></div>
+<div class="card"><img src="meme_photo/meme_flt12.jpg"></div>
+<div class="card"><img src="meme_photo/meme_flt13.jpg"></div>
+<div class="card"><img src="meme_photo/meme_flt14.jpg"></div>
+<div class="card"><img src="meme_photo/meme_flt15.jpg"></div>
+<div class="card"><img src="meme_photo/meme_flt16.jpg"></div>
+<div class="card"><img src="meme_photo/meme_flt17.jpg"></div>
+<div class="card"><img src="meme_photo/meme_flt18.jpg"></div>
+
+</section>
+
+<footer>
+    <p>Sent with a little extra heat 🔥❤️</p>
+</footer>
+
+<script>
+// LIGHTBOX
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+const closeBtn = document.querySelector(".lightbox .close");
+
+document.querySelectorAll(".card img").forEach(img => {
+    img.addEventListener("click", () => {
+        lightbox.style.display = "flex";
+        lightboxImg.src = img.src;
+    });
+});
+
+closeBtn.addEventListener("click", () => {
+    lightbox.style.display = "none";
+});
+
+lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) {
+        lightbox.style.display = "none";
+    }
+});
+
+document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+        lightbox.style.display = "none";
+    }
+});
+</script>
+
+</body>
+</html>

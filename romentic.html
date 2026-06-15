@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Love Letter ❤️ | Romantic</title>
+
+<link rel="stylesheet" href="romantic.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&family=Playfair+Display:wght@400;700&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+    <span class="close">&times;</span>
+    <img id="lightbox-img">
+</div>
+
+<!-- NAV -->
+<nav class="romantic-nav">
+    <h2 class="logo">For Mishra 💖</h2>
+
+    <ul>
+        <li><a href="../home.html">Home</a></li>
+        <li>|</li>
+        <li><a href="../loveString.html">Love String</a></li>
+    </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero-romantic">
+    <div class="hero-content">
+        <h1>Forever Yours 💌</h1>
+        <p>
+            Every picture is a heartbeat,<br>
+            every memory is a love story,<br>
+            and all of it belongs to you ❤️
+        </p>
+    </div>
+</section>
+
+<!-- IMAGES -->
+<section class="gallery">
+<div class="card"><img src="meme_photo/meme_rmnc_1.jpg"></div>
+<div class="card"><img src="meme_photo/meme_rmnc_2.jpg"></div>
+<div class="card"><img src="meme_photo/meme_rmnc_3.jpg"></div>
+<div class="card"><img src="meme_photo/meme_rmnc_4.jpg"></div>
+<div class="card"><img src="meme_photo/meme_rmnc_5.jpg"></div>
+<div class="card"><img src="meme_photo/meme_rmnc_6.jpg"></div>
+<div class="card"><img src="meme_photo/meme_rmnc_7.jpg"></div>
+<div class="card"><img src="meme_photo/meme_rmnc_8.jpg"></div>
+<div class="card"><img src="meme_photo/meme_rmnc_9.jpg"></div>
+<div class="card"><img src="meme_photo/meme_rmnc_10.jpg"></div>
+<div class="card"><img src="meme_photo/meme_rmnc_11.jpg"></div>
+<div class="card"><img src="meme_photo/meme_rmnc_12.jpg"></div>
+<div class="card"><img src="meme_photo/meme_rmnc_13.jpg"></div>
+<div class="card"><img src="meme_photo/meme_rmnc_14.jpg"></div>
+<div class="card"><img src="meme_photo/meme_rmnc_15.jpg"></div>
+<div class="card"><img src="meme_photo/meme_rmnc_16.jpg"></div>
+<div class="card"><img src="meme_photo/meme_rmnc_17.jpg"></div>
+<div class="card"><img src="meme_photo/meme_rmnc_18.jpg"></div>
+<div class="card"><img src="meme_photo/meme_rmnc_19.jpg"></div>
+<div class="card"><img src="meme_photo/meme_rmnc_20.jpg"></div>
+<div class="card"><img src="meme_photo/meme_rmnc_21.jpg"></div>
+<div class="card"><img src="meme_photo/meme_rmnc_22.jpg"></div>
+<div class="card"><img src="meme_photo/meme_rmnc_23.jpg"></div>
+<div class="card"><img src="meme_photo/meme_rmnc_24.jpg"></div>
+<div class="card"><img src="meme_photo/meme_rmnc_25.jpg"></div>
+<div class="card"><img src="meme_photo/meme_rmnc_26.jpg"></div>
+<div class="card"><img src="meme_photo/meme_rmnc_27.jpg"></div>
+<div class="card"><img src="meme_photo/meme_rmnc_28.jpg"></div>
+<div class="card"><img src="meme_photo/meme_rmnc_29.jpg"></div>
+<div class="card"><img src="meme_photo/meme_rmnc_30.jpg"></div>
+<div class="card"><img src="meme_photo/meme_rmnc_31.jpg"></div>
+<div class="card"><img src="meme_photo/meme_rmnc_32.jpg"></div>
+<div class="card"><img src="meme_photo/meme_rmnc_33.jpg"></div>
+<div class="card"><img src="meme_photo/meme_rmnc_34.jpg"></div>
+<div class="card"><img src="meme_photo/meme_rmnc_35.jpg"></div>
+<div class="card"><img src="meme_photo/meme_rmnc_36.jpg"></div>
+
+</section>
+
+<footer>
+    <p>Made with endless love ❤️</p>
+</footer>
+
+<script>
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+const closeBtn = document.querySelector(".close");
+
+document.querySelectorAll(".card img").forEach(img => {
+    img.addEventListener("click", () => {
+        lightbox.style.display = "flex";
+        lightboxImg.src = img.src;
+    });
+});
+
+closeBtn.onclick = () => lightbox.style.display = "none";
+
+lightbox.onclick = (e) => {
+    if(e.target === lightbox) lightbox.style.display = "none";
+};
+
+document.addEventListener("keydown", (e) => {
+    if(e.key === "Escape") lightbox.style.display = "none";
+});
+</script>
+
+</body>
+</html>
