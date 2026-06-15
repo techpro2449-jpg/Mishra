@@ -138,6 +138,7 @@ nav a:hover::after{
     display:none;
     justify-content:center;
     align-items:center;
+    z-index:999;   /* ✅ added */
 }
 
 .lightbox img{
@@ -153,6 +154,7 @@ nav a:hover::after{
     font-size:40px;
     color:white;
     cursor:pointer;
+    z-index:1000;   /* ✅ added */
 }
 
 /* FOOTER */
