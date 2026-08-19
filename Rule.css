@@ -1,0 +1,1025 @@
+:root {
+  --bg: #050407;
+  --panel: rgba(13, 10, 15, 0.82);
+
+  --gold: #e7bd71;
+  --gold-soft: #f5d99a;
+
+  --pink: #ff6f92;
+  --pink-soft: #ff9aae;
+
+  --text: #f7efe7;
+  --muted: #c8bfc0;
+
+  --line: rgba(231, 189, 113, 0.48);
+
+  --radius: 22px;
+}
+
+/* =========================
+   RESET
+========================= */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--text);
+
+  background:
+    radial-gradient(
+      circle at 75% 20%,
+      rgba(255, 83, 132, 0.10),
+      transparent 24rem
+    ),
+    radial-gradient(
+      circle at 20% 70%,
+      rgba(230, 174, 82, 0.07),
+      transparent 26rem
+    ),
+    var(--bg);
+
+  font-family: "Inter", sans-serif;
+  overflow-x: hidden;
+}
+
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+
+body::before {
+  opacity: 0.45;
+
+  background-image:
+    radial-gradient(circle, #fff 0 1px, transparent 1.4px),
+    radial-gradient(circle, #ffd98a 0 1px, transparent 1.4px);
+
+  background-size:
+    115px 135px,
+    180px 200px;
+
+  background-position:
+    15px 20px,
+    70px 90px;
+}
+
+body::after {
+  background:
+    radial-gradient(
+      circle at center,
+      transparent 25%,
+      rgba(0, 0, 0, 0.48) 100%
+    );
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+/* =========================
+   SIMPLE NAVBAR
+========================= */
+
+.navbar {
+  width: min(1180px, calc(100% - 32px));
+  height: 64px;
+
+  margin: 18px auto 0;
+  padding: 0 26px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border: 1px solid rgba(231, 189, 113, 0.42);
+  border-radius: 999px;
+
+  background: rgba(5, 4, 7, 0.72);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  position: sticky;
+  top: 14px;
+
+  z-index: 100;
+
+  box-shadow:
+    0 10px 35px rgba(0, 0, 0, 0.25);
+
+  transition:
+    border-color 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.navbar:hover {
+  border-color: rgba(231, 189, 113, 0.58);
+
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.30),
+    0 0 25px rgba(255, 111, 146, 0.05);
+}
+
+
+/* =========================
+   BRAND
+========================= */
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+
+  color: var(--gold-soft);
+
+  font:
+    600 25px "Cormorant Garamond",
+    serif;
+
+  letter-spacing: 0.2px;
+
+  white-space: nowrap;
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.brand span {
+  color: var(--pink);
+
+  font:
+    400 31px "Great Vibes",
+    cursive;
+
+  margin-right: 3px;
+}
+
+.brand b {
+  color: var(--pink);
+
+  margin-left: 5px;
+
+  font-size: 18px;
+
+  transition:
+    transform 0.3s ease,
+    text-shadow 0.3s ease;
+}
+
+.brand:hover {
+  color: #fff4e9;
+
+  transform: translateY(-1px);
+}
+
+.brand:hover b {
+  transform: scale(1.15);
+
+  text-shadow:
+    0 0 12px rgba(255, 111, 146, 0.7);
+}
+
+
+/* =========================
+   HOME NAV
+========================= */
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+nav a {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+
+  height: 64px;
+
+  padding: 0 5px;
+
+  color: #eee6df;
+
+  font:
+    500 14px "Inter",
+    sans-serif;
+
+  letter-spacing: 0.2px;
+
+  transition:
+    color 0.3s ease,
+    text-shadow 0.3s ease;
+}
+
+
+/* underline */
+
+nav a::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+
+  bottom: 17px;
+
+  height: 1.5px;
+
+  border-radius: 10px;
+
+  background: var(--pink);
+
+  box-shadow:
+    0 0 8px rgba(255, 111, 146, 0.7);
+
+  transform: scaleX(0);
+
+  transform-origin: center;
+
+  transition:
+    transform 0.3s ease;
+}
+
+
+/* hover */
+
+nav a:hover {
+  color: var(--pink-soft);
+
+  text-shadow:
+    0 0 12px rgba(255, 111, 146, 0.3);
+}
+
+nav a:hover::after,
+nav a.active::after {
+  transform: scaleX(1);
+}
+
+
+/* =========================
+   MOBILE NAVBAR
+========================= */
+
+@media (max-width: 640px) {
+
+  .navbar {
+    width: calc(100% - 20px);
+
+    height: 58px;
+
+    margin-top: 10px;
+
+    padding: 0 17px;
+
+    top: 10px;
+
+    border-radius: 999px;
+  }
+
+  .brand {
+    font-size: 22px;
+  }
+
+  .brand span {
+    font-size: 27px;
+  }
+
+  .brand b {
+    font-size: 16px;
+  }
+
+  /* Home remains visible on mobile */
+  nav {
+    display: flex;
+    align-items: center;
+  }
+
+  nav a {
+    height: 58px;
+
+    padding: 0 3px;
+
+    font-size: 13px;
+  }
+
+  nav a::after {
+    bottom: 12px;
+  }
+}
+
+
+/* =========================
+   SMALL PHONES
+========================= */
+
+@media (max-width: 380px) {
+
+  .navbar {
+    width: calc(100% - 16px);
+
+    padding: 0 14px;
+  }
+
+  .brand {
+    font-size: 20px;
+  }
+
+  .brand span {
+    font-size: 25px;
+  }
+
+  nav a {
+    font-size: 12px;
+  }
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+  width: min(1180px, calc(100% - 32px));
+
+  margin: 75px auto 110px;
+
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+
+  gap: clamp(35px, 6vw, 90px);
+
+  align-items: center;
+}
+
+.hero-copy {
+  padding-left: 2vw;
+}
+
+.eyebrow,
+.section-heading p {
+  color: var(--gold);
+
+  font:
+    italic 18px "Cormorant Garamond",
+    serif;
+
+  letter-spacing: 1px;
+}
+
+.hero h1 {
+  margin: 20px 0 25px;
+
+  color: var(--gold-soft);
+
+  font:
+    700 clamp(52px, 6.2vw, 86px) / 0.83
+    "Cormorant Garamond",
+    serif;
+
+  letter-spacing: -2px;
+}
+
+.hero h1 span {
+  display: block;
+
+  color: var(--pink);
+
+  font:
+    400 clamp(67px, 7vw, 98px) "Great Vibes",
+    cursive;
+
+  letter-spacing: 0;
+
+  margin-bottom: 7px;
+
+  text-shadow:
+    0 0 22px rgba(255, 111, 146, 0.35);
+}
+
+.intro {
+  max-width: 520px;
+
+  color: var(--muted);
+
+  font:
+    18px/1.75 "Cormorant Garamond",
+    serif;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 14px;
+
+  margin-top: 30px;
+
+  padding: 13px 22px;
+
+  border: 1px solid var(--line);
+  border-radius: 999px;
+
+  color: var(--gold-soft);
+
+  background: rgba(255, 255, 255, 0.025);
+
+  transition: 0.3s;
+}
+
+.cta:hover {
+  transform: translateY(-3px);
+
+  border-color: var(--pink);
+
+  box-shadow:
+    0 0 25px rgba(255, 111, 146, 0.15);
+}
+
+
+/* Hero image */
+
+.hero-art {
+  position: relative;
+  isolation: isolate;
+}
+
+.hero-art .glow {
+  position: absolute;
+
+  inset: 12% 12%;
+
+  background: rgba(255, 111, 146, 0.16);
+
+  filter: blur(75px);
+
+  z-index: -1;
+}
+
+.hero-art img {
+  width: 100%;
+  max-height: 720px;
+
+  object-fit: cover;
+  object-position: center;
+
+  display: block;
+
+  border-radius: var(--radius);
+
+  border: 1px solid var(--line);
+
+  box-shadow:
+    0 0 0 8px rgba(255, 255, 255, 0.012),
+    0 30px 90px rgba(0, 0, 0, 0.6),
+    0 0 50px rgba(255, 111, 146, 0.08);
+
+  transition:
+    transform 0.5s ease,
+    box-shadow 0.5s ease;
+}
+
+.hero-art img:hover {
+  transform: translateY(-6px) scale(1.01);
+
+  box-shadow:
+    0 35px 100px rgba(0, 0, 0, 0.65),
+    0 0 65px rgba(255, 111, 146, 0.12);
+}
+
+
+/* =========================
+   PROMISE SECTION
+========================= */
+
+.promise-section {
+  width: min(1180px, calc(100% - 32px));
+
+  margin: 0 auto 120px;
+}
+
+.section-heading {
+  text-align: center;
+
+  margin-bottom: 45px;
+}
+
+.section-heading h2 {
+  margin-top: 8px;
+
+  color: var(--gold-soft);
+
+  font:
+    700 clamp(42px, 5vw, 68px) / 0.95
+    "Cormorant Garamond",
+    serif;
+}
+
+.section-heading h2 span {
+  color: var(--pink);
+
+  font-family: "Great Vibes", cursive;
+  font-weight: 400;
+}
+
+.promise-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 12px;
+}
+
+.promise-card {
+  min-height: 88px;
+
+  display: grid;
+
+  grid-template-columns:
+    62px 48px 1fr;
+
+  align-items: center;
+
+  border: 1px solid rgba(231, 189, 113, 0.34);
+
+  border-radius: 15px;
+
+  background:
+    linear-gradient(
+      110deg,
+      rgba(255, 255, 255, 0.035),
+      rgba(255, 255, 255, 0.012)
+    );
+
+  overflow: hidden;
+
+  transition: 0.3s ease;
+}
+
+.promise-card:hover {
+  transform: translateY(-3px);
+
+  border-color: rgba(255, 111, 146, 0.55);
+
+  background: rgba(255, 111, 146, 0.045);
+}
+
+.number {
+  text-align: center;
+
+  color: var(--gold);
+
+  font:
+    700 26px "Cormorant Garamond",
+    serif;
+}
+
+.icon {
+  width: 36px;
+  height: 36px;
+
+  display: grid;
+  place-items: center;
+
+  border: 1px solid rgba(255, 111, 146, 0.42);
+
+  border-radius: 50%;
+
+  color: var(--pink);
+
+  box-shadow:
+    inset 0 0 12px rgba(255, 111, 146, 0.06);
+}
+
+.promise-card p {
+  padding: 14px 17px 14px 8px;
+
+  color: #eee7e2;
+
+  font:
+    17px/1.25 "Cormorant Garamond",
+    serif;
+}
+
+
+/* =========================
+   US SECTION
+========================= */
+
+.us-section {
+  width: min(900px, calc(100% - 32px));
+
+  margin: 0 auto 110px;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr 1.15fr;
+
+  gap: 18px;
+}
+
+.quote-card,
+.team-card {
+  border: 1px solid var(--line);
+
+  border-radius: var(--radius);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.045),
+      rgba(255, 255, 255, 0.012)
+    );
+
+  backdrop-filter: blur(10px);
+}
+
+.quote-card {
+  min-height: 310px;
+
+  display: grid;
+  place-items: center;
+
+  text-align: center;
+
+  padding: 40px;
+
+  position: relative;
+}
+
+.quote-heart {
+  position: absolute;
+
+  top: -18px;
+
+  width: 48px;
+  height: 48px;
+
+  display: grid;
+  place-items: center;
+
+  border: 1px solid var(--line);
+  border-radius: 50%;
+
+  color: var(--pink);
+
+  background: var(--bg);
+
+  font-size: 22px;
+}
+
+.quote-card p {
+  color: #f3e7dc;
+
+  font:
+    italic 22px/1.5 "Cormorant Garamond",
+    serif;
+}
+
+.team-card {
+  padding: 45px 30px;
+
+  text-align: center;
+}
+
+.team-card p {
+  color: #eee4dc;
+
+  font:
+    20px/1.5 "Cormorant Garamond",
+    serif;
+}
+
+.team-card h3 {
+  margin: 20px 0 8px;
+
+  color: var(--pink);
+
+  font:
+    26px "Cormorant Garamond",
+    serif;
+}
+
+.team-card h3 span {
+  color: var(--pink);
+}
+
+.names {
+  color: var(--pink);
+
+  font:
+    52px "Great Vibes",
+    cursive;
+
+  text-shadow:
+    0 0 18px rgba(255, 111, 146, 0.18);
+}
+
+.names b {
+  font-family: inherit;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+  padding: 70px 20px 45px;
+
+  text-align: center;
+
+  border-top:
+    1px solid rgba(231, 189, 113, 0.18);
+
+  background:
+    linear-gradient(
+      to bottom,
+      transparent,
+      rgba(255, 255, 255, 0.025)
+    );
+}
+
+.footer-top {
+  color: var(--gold-soft);
+
+  font:
+    700 clamp(34px, 5vw, 58px)
+    "Cormorant Garamond",
+    serif;
+}
+
+.footer-names {
+  margin-top: 5px;
+
+  color: var(--pink);
+
+  font:
+    clamp(48px, 7vw, 82px)
+    "Great Vibes",
+    cursive;
+}
+
+.footer-names span {
+  font-family: inherit;
+}
+
+.footer-line {
+  width: min(700px, 80%);
+
+  height: 1px;
+
+  margin: 24px auto;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      var(--gold),
+      transparent
+    );
+}
+
+.footer small {
+  color: #bfb2ad;
+
+  font:
+    15px "Cormorant Garamond",
+    serif;
+
+  letter-spacing: 1px;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+  .hero {
+    grid-template-columns: 1fr;
+
+    margin-top: 55px;
+
+    text-align: center;
+  }
+
+  .hero-copy {
+    padding: 0;
+  }
+
+  .intro {
+    margin: 0 auto;
+  }
+
+  .hero-art {
+    width: min(700px, 100%);
+
+    margin: 0 auto;
+  }
+
+  .promise-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .us-section {
+    grid-template-columns: 1fr;
+
+    width: min(700px, calc(100% - 32px));
+  }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 640px) {
+
+  .navbar {
+    width: calc(100% - 20px);
+
+    min-height: 58px;
+
+    margin-top: 10px;
+
+    padding: 0 17px;
+  }
+
+  .brand {
+    font-size: 22px;
+  }
+
+  .brand span {
+    font-size: 27px;
+  }
+
+  /*
+     NAVBAR FIX:
+     Home stays visible on mobile.
+     No dropdown / hamburger.
+  */
+
+  nav {
+    display: flex;
+
+    align-items: center;
+
+    position: static;
+
+    padding: 0;
+
+    flex-direction: row;
+
+    gap: 0;
+
+    border: 0;
+
+    border-radius: 0;
+
+    background: transparent;
+
+    backdrop-filter: none;
+  }
+
+  nav a {
+    width: auto;
+
+    height: 58px;
+
+    padding: 0 3px;
+
+    text-align: center;
+
+    font-size: 13px;
+  }
+
+  nav a::after {
+    bottom: 12px;
+  }
+
+
+  .hero {
+    width: calc(100% - 22px);
+
+    margin: 50px auto 80px;
+
+    gap: 35px;
+  }
+
+  .eyebrow {
+    font-size: 15px;
+  }
+
+  .hero h1 {
+    font-size: clamp(45px, 14vw, 68px);
+  }
+
+  .hero h1 span {
+    font-size: clamp(60px, 18vw, 84px);
+  }
+
+  .intro {
+    font-size: 17px;
+  }
+
+  .hero-art img {
+    border-radius: 16px;
+
+    max-height: none;
+  }
+
+  .promise-section {
+    width: calc(100% - 22px);
+
+    margin-bottom: 80px;
+  }
+
+  .section-heading h2 {
+    font-size: 45px;
+  }
+
+  .promise-card {
+    grid-template-columns:
+      50px 43px 1fr;
+
+    min-height: 82px;
+  }
+
+  .number {
+    font-size: 22px;
+  }
+
+  .icon {
+    width: 32px;
+    height: 32px;
+
+    font-size: 14px;
+  }
+
+  .promise-card p {
+    font-size: 16px;
+
+    padding-right: 10px;
+  }
+
+  .us-section {
+    width: calc(100% - 22px);
+
+    margin-bottom: 75px;
+  }
+
+  .quote-card {
+    min-height: 270px;
+
+    padding: 30px 22px;
+  }
+
+  .quote-card p {
+    font-size: 19px;
+  }
+
+  .team-card {
+    padding: 35px 18px;
+  }
+
+  .team-card p {
+    font-size: 18px;
+  }
+
+  .names {
+    font-size: 45px;
+  }
+
+  .footer {
+    padding: 55px 14px 35px;
+  }
+
+  .footer-top {
+    font-size: 35px;
+  }
+
+  .footer-names {
+    font-size: 52px;
+  }
+}
