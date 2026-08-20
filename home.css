@@ -35,6 +35,7 @@ h1, h2 {
     margin-bottom: 40px;
 }
 
+
 /* NAVBAR */
 nav {
     display: flex;
@@ -54,7 +55,7 @@ nav {
     color: var(--teal);
 }
 
-/* 🔥 UPDATED NAVBAR (HAMBURGER ALWAYS) */
+/*NAVBAR */
 
 .menu-toggle {
     display: block;
@@ -209,6 +210,605 @@ header p{
 .about-img img:hover{
     transform: scale(1.05) rotate(-1deg);
 }
+
+/* =========================================================
+   PROMISES SECTION
+========================================================= */
+
+.promises-section {
+    width: 100%;
+    padding: 90px 5%;
+    background:
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(255, 190, 210, 0.18),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 90% 80%,
+            rgba(200, 190, 255, 0.12),
+            transparent 30%
+        ),
+        var(--cream);
+}
+
+.promises-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+
+    align-items: center;
+    gap: clamp(35px, 5vw, 70px);
+
+    padding: clamp(30px, 5vw, 60px);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.97),
+            rgba(255, 245, 248, 0.93)
+        );
+
+    border: 1px solid rgba(230, 57, 70, 0.10);
+
+    border-radius: clamp(22px, 3vw, 34px);
+
+    box-shadow:
+        0 18px 55px rgba(44, 62, 80, 0.08);
+
+    position: relative;
+    overflow: hidden;
+}
+
+/* Decorative hearts */
+
+.promises-container::before {
+    content: "♡";
+
+    position: absolute;
+    top: 20px;
+    left: 30px;
+
+    font-size: clamp(28px, 4vw, 46px);
+
+    color: rgba(246, 140, 165, 0.35);
+
+    transform: rotate(-15deg);
+
+    pointer-events: none;
+}
+
+.promises-container::after {
+    content: "♡";
+
+    position: absolute;
+    right: 30px;
+    bottom: 20px;
+
+    font-size: clamp(25px, 3vw, 38px);
+
+    color: rgba(246, 140, 165, 0.28);
+
+    transform: rotate(12deg);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   PROMISE IMAGE
+========================================================= */
+
+.promises-image-wrap {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    z-index: 1;
+}
+
+.promises-image-card {
+    width: 100%;
+    max-width: 560px;
+
+    background: #fff;
+
+    border-radius: 24px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.11);
+
+    transform: rotate(-1deg);
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.promises-image-card img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    aspect-ratio: 16 / 10;
+
+    object-fit: cover;
+
+    object-position: center;
+}
+
+.promises-image-card:hover {
+    transform: rotate(0deg) translateY(-5px);
+
+    box-shadow:
+        0 25px 55px rgba(0, 0, 0, 0.15);
+}
+
+
+/* =========================================================
+   PROMISE CONTENT
+========================================================= */
+
+.promises-content {
+    width: 100%;
+
+    position: relative;
+    z-index: 2;
+}
+
+.promises-label {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 8px 16px;
+
+    border-radius: 50px;
+
+    background: rgba(255, 185, 204, 0.15);
+
+    border: 1px solid rgba(255, 150, 180, 0.22);
+
+    color: #ed7797;
+
+    font-size: 0.78rem;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    margin-bottom: 18px;
+}
+
+.promises-content h2 {
+    margin: 0 0 15px;
+
+    color: var(--teal);
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: clamp(2.2rem, 4vw, 4rem);
+
+    line-height: 1.08;
+}
+
+.promise-line {
+    width: 65px;
+    height: 4px;
+
+    border-radius: 20px;
+
+    background: #f487a5;
+
+    margin-bottom: 25px;
+}
+
+.promises-content > p {
+    max-width: 540px;
+
+    margin: 0 0 18px;
+
+    color: #4d5964;
+
+    font-size: clamp(0.92rem, 1.5vw, 1.05rem);
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   TOGETHER CARD
+========================================================= */
+
+.together-card {
+    width: 100%;
+
+    margin-top: 26px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    padding: 20px;
+
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,0.98),
+            rgba(255,235,241,0.82)
+        );
+
+    border: 1px solid rgba(241, 148, 171, 0.18);
+
+    box-shadow:
+        0 10px 28px rgba(226, 112, 144, 0.07);
+}
+
+.together-heart {
+    width: 68px;
+    height: 68px;
+
+    min-width: 68px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #ffd7e1;
+
+    color: #ec7698;
+
+    font-size: 40px;
+
+    box-shadow:
+        inset 0 0 0 8px rgba(255,255,255,0.45);
+}
+
+.together-small {
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: #ef7193;
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: 1rem;
+
+    font-style: italic;
+}
+
+.together-card strong {
+    display: block;
+
+    color: var(--teal);
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: clamp(1.5rem, 3vw, 2rem);
+
+    line-height: 1.15;
+
+    margin-bottom: 4px;
+}
+
+.together-card p {
+    margin: 0;
+
+    color: #58636d;
+
+    font-size: 0.88rem;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   PROMISE BUTTON
+========================================================= */
+
+.promises-btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 28px;
+
+    min-height: 46px;
+
+    padding: 12px 25px;
+
+    background: var(--teal);
+
+    color: #fff;
+
+    box-shadow:
+        0 10px 25px rgba(44, 62, 80, 0.15);
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.promises-btn:hover {
+    background: #243544;
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 15px 30px rgba(44, 62, 80, 0.20);
+}
+
+
+/* =========================================================
+   LARGE TABLET
+========================================================= */
+
+@media (max-width: 1050px) {
+
+    .promises-section {
+        padding: 75px 4%;
+    }
+
+    .promises-container {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 35px;
+
+        padding: 40px;
+    }
+
+    .promises-content h2 {
+        font-size: 2.8rem;
+    }
+}
+
+
+/* =========================================================
+   TABLET / SMALL LAPTOP
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .promises-section {
+        padding: 65px 4%;
+    }
+
+    .promises-container {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+
+        padding: 35px;
+    }
+
+    .promises-image-card {
+        max-width: 680px;
+
+        margin: 0 auto;
+
+        transform: none;
+    }
+
+    .promises-content {
+        max-width: 680px;
+
+        margin: 0 auto;
+
+        text-align: center;
+    }
+
+    .promise-line {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .promises-content > p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .together-card {
+        text-align: left;
+
+        max-width: 560px;
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .promises-btn {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .promises-section {
+        padding: 50px 14px;
+    }
+
+    .promises-container {
+        padding: 24px 18px;
+
+        gap: 30px;
+
+        border-radius: 24px;
+    }
+
+    .promises-container::before {
+        top: 10px;
+        left: 14px;
+
+        font-size: 28px;
+    }
+
+    .promises-container::after {
+        right: 15px;
+        bottom: 12px;
+
+        font-size: 25px;
+    }
+
+    .promises-image-card {
+        border-radius: 18px;
+    }
+
+    .promises-image-card img {
+        aspect-ratio: 16 / 10;
+    }
+
+    .promises-label {
+        padding: 7px 13px;
+
+        font-size: 0.7rem;
+
+        margin-bottom: 15px;
+    }
+
+    .promises-content h2 {
+        font-size: 2.2rem;
+
+        margin-bottom: 13px;
+    }
+
+    .promise-line {
+        width: 55px;
+
+        height: 3px;
+
+        margin-bottom: 20px;
+    }
+
+    .promises-content > p {
+        font-size: 0.92rem;
+
+        line-height: 1.7;
+
+        margin-bottom: 15px;
+    }
+
+    .together-card {
+        margin-top: 22px;
+
+        gap: 14px;
+
+        padding: 16px;
+
+        border-radius: 18px;
+    }
+
+    .together-heart {
+        width: 58px;
+        height: 58px;
+
+        min-width: 58px;
+
+        font-size: 33px;
+    }
+
+    .together-small {
+        font-size: 0.9rem;
+    }
+
+    .together-card strong {
+        font-size: 1.5rem;
+    }
+
+    .together-card p {
+        font-size: 0.78rem;
+    }
+
+    .promises-btn {
+        width: 100%;
+
+        margin-top: 23px;
+
+        padding: 12px 20px;
+
+        font-size: 13px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 390px) {
+
+    .promises-section {
+        padding: 42px 10px;
+    }
+
+    .promises-container {
+        padding: 20px 14px;
+
+        gap: 25px;
+
+        border-radius: 21px;
+    }
+
+    .promises-content h2 {
+        font-size: 1.95rem;
+    }
+
+    .promises-content > p {
+        font-size: 0.87rem;
+    }
+
+    .together-card {
+        flex-direction: column;
+
+        text-align: center;
+
+        padding: 18px 14px;
+    }
+
+    .together-heart {
+        width: 60px;
+        height: 60px;
+    }
+
+    .together-small {
+        font-size: 0.88rem;
+    }
+
+    .together-card strong {
+        font-size: 1.4rem;
+    }
+
+    .together-card p {
+        font-size: 0.76rem;
+    }
+}
+
 
 /* DOODLES SECTION */
 
