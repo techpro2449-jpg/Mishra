@@ -79,6 +79,78 @@
 
 </section>
 
+<!-- PROMISES SECTION -->
+<section id="promises" class="promises-section">
+
+    <div class="promises-container">
+
+        <div class="promises-image-wrap">
+
+            <div class="promises-image-card">
+                <img src="home_promise.png" alt="Our Promises">
+            </div>
+
+        </div>
+
+
+        <div class="promises-content">
+
+            <span class="promises-label">
+                ♥ PROMISES
+            </span>
+
+            <h2>
+                Our Promises ♡
+            </h2>
+
+            <div class="promise-line"></div>
+
+            <p>
+                Promises are the tiny threads that hold our hearts
+                together, even on the hardest days.
+            </p>
+
+            <p>
+                These are not just words —
+                they are vows from my heart to yours. 💌
+            </p>
+
+
+            <div class="together-card">
+
+                <div class="together-heart">
+                    ♡
+                </div>
+
+                <div>
+
+                    <span class="together-small">
+                        Month we are together ♡
+                    </span>
+
+                    <strong>
+                        <span id="monthsTogether">0</span> Months
+                    </strong>
+
+                    <p>
+                        and countless more to go... ❤️
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <a href="timeline.html" class="btn promises-btn">
+                Read Our Promises 💌
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
 <!-- DOODLES -->
 <section id="doodles" class="bg-alt">
     <div class="container">
@@ -167,5 +239,41 @@
         link.addEventListener('click', () => {
             navLinks.classList.remove('active');
         });
+
+    
     });
+
+
+    const relationshipStart = new Date("March 27, 2026 23:35:00");
+
+    function updateMonthsTogether() {
+
+        const now = new Date();
+
+        let months =
+            (now.getFullYear() - relationshipStart.getFullYear()) * 12 +
+            (now.getMonth() - relationshipStart.getMonth());
+
+        const anniversary = new Date(
+            now.getFullYear(),
+            now.getMonth(),
+            relationshipStart.getDate(),
+            relationshipStart.getHours(),
+            relationshipStart.getMinutes(),
+            relationshipStart.getSeconds()
+        );
+
+        if (now < anniversary) {
+            months--;
+        }
+
+        months = Math.max(0, months);
+
+        document.getElementById("monthsTogether").textContent = months;
+    }
+
+    updateMonthsTogether();
+
+    setInterval(updateMonthsTogether, 1000);
+
 </script>
