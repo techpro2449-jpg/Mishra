@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Our Journey ❤️</title>
-<link rel="stylesheet" href="timeline.css">
+    <title>Our Journey ❤️</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="h.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&family=Playfair+Display:wght@400;700&display=swap"
+        rel="stylesheet"
+    >
 </head>
-
-<body>
-
 <!-- NAV -->
 <nav>
     <h2 class="logo">For Mishra ❤️</h2>
@@ -39,138 +40,110 @@
 
 </section>
 
-
 <!-- TIMER SECTION -->
-<section class="timer-section">
+    <section class="timer-section">
+        <h2 class="section-title">From Friends to Forever 💞</h2>
+        <div class="timer-card">
+            <div class="time-box">
+                <span id="days">0</span>
+                <p>Days</p>
+            </div>
+            <div class="time-box">
+                <span id="hours">0</span>
+                <p>Hours</p>
+            </div>
+            <div class="time-box">
+                <span id="minutes">0</span>
+                <p>Minutes</p>
+            </div>
+            <div class="time-box">
+                <span id="seconds">0</span>
+                <p>Seconds</p>
+            </div>
+        </div>
+        <p class="love-text">Every second with you is my forever ❤️</p>
+    </section>
 
-    <h2 class="section-title">From Friends to Forever 💞</h2>
-
-    <div class="timer-card">
-
-        <div class="time-box">
-            <span id="days">0</span>
-            <p>Days</p>
+    <!-- TIMELINE SECTION -->
+    <section class="timeline-container">
+        
+        <!-- ITEM 1: LEFT -->
+        <div class="timeline-item left">
+            <div class="timeline-icon">✨</div>
+            <div class="timeline-content">
+                <span class="pill-badge">✨ The Day It All Started</span>
+                <h3 class="date-title">2 January 2026 💫</h3>
+                <p>The day we met… I didn’t know it would become the most important chapter of my life. Everything started making sense from that moment 💕</p>
+            </div>
         </div>
 
-        <div class="time-box">
-            <span id="hours">0</span>
-            <p>Hours</p>
+        <!-- ITEM 2: RIGHT -->
+        <div class="timeline-item right">
+            <div class="timeline-icon">💍</div>
+            <div class="timeline-content">
+                <div class="card-image">
+                    <img src="yes.jpeg" alt="Her Yes Moment">
+                </div>
+                <span class="pill-badge text-left">Her Big "YES" 💫</span>
+                <h2>The most beautiful moment of my life</h2>
+                <p>When you said YES… everything paused for a second. That one word changed my world forever. That moment… is my forever.</p>
+            </div>
         </div>
 
-        <div class="time-box">
-            <span id="minutes">0</span>
-            <p>Minutes</p>
+        <!-- ITEM 3: LEFT -->
+        <div class="timeline-item left">
+            <div class="timeline-icon">💖</div>
+            <div class="timeline-content">
+                <div class="card-image">
+                    <img src="welcome.jpeg" alt="Welcome to My Life">
+                </div>
+                <h2>Welcome to My Life</h2>
+                <p>That smile… that look… I knew right then — I found my home in you.</p>
+            </div>
         </div>
 
-        <div class="time-box">
-            <span id="seconds">0</span>
-            <p>Seconds</p>
+        <!-- ITEM 4: CENTER / FULL -->
+        <div class="timeline-item full">
+            <div class="timeline-icon">📹</div>
+            <div class="timeline-content video-card">
+                <h2>A Memory From That Day 🎬</h2>
+                <div class="video-box">
+                    <video controls>
+                        <source src="doodle/vd1.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
         </div>
 
-    </div>
+    </section>
 
-    <p class="love-text">Every second with you is my forever ❤️</p>
+    <!-- FOOTER -->
+    <footer>
+        <p>Built with love, for the one I love ❤️</p>
+    </footer>
 
-</section>
+    <!-- JS TIMER -->
+    <script>
+        const startDate = new Date("March 27, 2026 23:35:00").getTime();
 
-<!-- DAY WE MET -->
-<section class="first-meet">
+        function updateTimer() {
+            const now = new Date().getTime();
+            const diff = now - startDate;
 
-    <h2>✨ The Day It All Started ✨</h2>
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+            const minutes = Math.floor((diff / (1000 * 60)) % 60);
+            const seconds = Math.floor((diff / 1000) % 60);
 
-    <div class="meet-card">
-        <h3>2 January 2026 💫</h3>
-        <p>
-            The day we met…  
-            I didn’t know it would become the most important chapter of my life.  
-            But somehow, everything started making sense from that moment ❤️
-        </p>
-    </div>
+            document.getElementById("days").innerText = days > 0 ? days : 0;
+            document.getElementById("hours").innerText = hours > 0 ? hours : 0;
+            document.getElementById("minutes").innerText = minutes > 0 ? minutes : 0;
+            document.getElementById("seconds").innerText = seconds > 0 ? seconds : 0;
+        }
 
-</section>
-
-<!-- YES MOMENT -->
-<section class="moment">
-    <h2>Her Big “YES” 💫</h2>
-
-    <div class="moment-grid">
-        <div class="image">
-            <img src="yes.jpeg" alt="Her Yes Moment">
-        </div>
-
-        <div class="text">
-            <h3>The most beautiful moment of my life</h3>
-            <p>
-                When you said YES… everything paused for a second.  
-                That one word changed my world forever.  
-                That moment… is my forever.
-            </p>
-        </div>
-    </div>
-</section>
-
-<!-- YOUR REACTION -->
-<section class="moment alt">
-    
-
-    <div class="moment-grid">
-        <div class="image">
-            <img src="welcome.jpeg" alt="Reaction">
-        </div>
-
-        <div class="text">
-            <h3>Welcome to My Life</h3>
-            <p>
-                That smile… that look…  
-                I knew right then —  
-                I found my home in you.
-            </p>
-        </div>
-    </div>
-</section>
-
-<!-- VIDEO -->
-<section class="video-section">
-
-    <h2>A Memory From That Day 🎥</h2>
-
-    <div class="video-box">
-        <video controls>
-            <source src="doodle/vd1.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    </div>
-
-</section>
-    
-<footer>
-    <p>Built with love, for the one I love ❤️</p>
-</footer>
-
-<!-- JS -->
-<script>
-const startDate = new Date("March 27, 2026 23:35:00").getTime();
-
-function updateTimer() {
-    const now = new Date().getTime();
-    const diff = now - startDate;
-
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-    const minutes = Math.floor((diff / (1000 * 60)) % 60);
-    const seconds = Math.floor((diff / 1000) % 60);
-
-    document.getElementById("days").innerText = days;
-    document.getElementById("hours").innerText = hours;
-    document.getElementById("minutes").innerText = minutes;
-    document.getElementById("seconds").innerText = seconds;
-}
-
-setInterval(updateTimer, 1000);
-updateTimer();
-</script>
-
-
-
+        setInterval(updateTimer, 1000);
+        updateTimer();
+    </script>
 </body>
 </html>
